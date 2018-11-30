@@ -1,0 +1,332 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body, button, input, select, textarea {
+    font: 12px arial,"微软雅黑";
+}
+ul,ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+b,h1,h2,h3,h4,h5,h6,em,i{
+	font-size: 12px;
+	font-style:normal; 
+	font-weight:normal;
+}
+.wrapbox{
+	width: 1200px;
+	margin: 0 auto;
+}
+i{
+	background-image: url(../img/ui.png);
+}
+/*顶部广告*/
+.advert {
+  background: #c3799a;
+  width: 100%;
+}
+.advert div {
+  height: 80px;
+  position: relative;
+}
+.close{
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	display: block;
+	width: 12px;
+	height: 12px;
+	padding: 6px;
+}
+.close i{
+	display: block;
+	width: 12px;
+	height: 12px;
+	background-position:-60px -466px;
+}
+.close:hover i{
+	background-position: -72px -466px;
+}
+.close:hover{
+	background: #000;
+	opacity: 0.5;
+}
+
+/*top*/
+.top-wrap{
+	width: 100%;
+	position: relative;
+	border-bottom: 1px solid #f3f3f3;
+	background: #f8f8f8;
+	height: 30px;
+}
+
+.top{
+	text-align: center;
+	height: 31px;
+
+}
+.top li{
+	float: left;
+	line-height: 31px;
+	margin: 0 10px;
+}
+.top ul li a{
+	color: #5e5e5e;
+}
+.top ul li b{
+	color: #f5004b;
+}
+.top ul li a:hover{
+	color: #f5004b;
+}
+#dropdown{
+	font-size: 12px;	
+	background: pink;
+	height: auto;
+	width: 330px;
+}
+.public-dropdown{
+	height: 56px;
+	width: 310px;
+	margin: 0 auto;
+	padding: 20px 0px 10px 0px;
+}
+.public-drop{
+	border-top: 1px solid #f3f3f3;
+	padding-top: 20px;
+	position: relative;
+	width: 310px;
+	margin: 0 auto;
+}
+.public-dropdown i{
+	display: inline-block;
+	width: 55px;
+	float: left;
+	height: 55px;
+	border-radius:50% ;
+	background-image: url(../img/ui.png);
+	background-position:0 -337px;
+	
+}
+.public-dropdown p{
+	padding-top: 20px;
+	width: 235px;
+	height: 36px;
+	line-height: 20px;
+}
+.public-drop p{
+	width: 100px;
+	line-height: 18px;
+	display: inline-block;
+}
+.top-l{
+	position: relative;
+	width: 80px;
+}
+.top-l>i{
+	position: absolute;
+	top: 12px;
+	right: 3px;
+	background-position: -62px -433px;
+	width: 7px;
+	height: 4px;
+	overflow: hidden;
+}
+.top ol{
+	float: right;
+}
+
+/*搜索*/
+.search-wrap{
+	width: 100%;
+}
+.search{
+	height: 120px;
+}
+
+
+/*导航栏*/
+.nav-wrap{
+	width: 100%;
+	background: #f8f8f8;
+}
+.nav{
+	height: 40px;
+}
+/*轮播图*/
+.main{
+	height: 450px;
+	width: 100%;
+	position: relative;
+	background-color: rgb(249,81,68);
+}
+.main ul{
+	position:relative;
+	width: 750px;
+	height: 450px;
+	margin: 0 auto;
+}
+.main ul>li{
+	position:absolute;
+	top:0;
+	left:0;
+	height: 450px;
+	width: 750px;
+}
+.main ul>li a{
+	width: 750px;
+	height: 450px;
+	position: absolute;
+}
+.main ul li img{
+	width: 750px;
+	height: 450px;
+}
+.main ol{
+	position: absolute;
+	bottom: 10px;
+	width: 304px;
+	left: 50%;
+	margin-left: -114px;
+}
+.main ol li{
+	float: left;
+	width: 30px;
+	height: 5px;
+	margin: 0 4px;
+	text-align: center;
+}
+.main ol li a{
+	  display: block;
+    width: 30px;
+    height: 5px;
+    background: #000;
+    opacity: .3;
+}
+
+		/*<!--美日必抢-->*/
+.mr-wrap{
+	width: 100%;
+}
+.mr{
+	height: 272px;
+	background: pink;
+}
+		/*<!--淘实惠 购新潮-->*/
+.tao-wrap{
+	width: 100%;
+}
+.tao{
+	height: 481px;
+	background: yellow;
+}
+
+		/*<!--领券中心-->*/
+.quan{
+	width: 1200px;
+	height: 110px;
+	margin: 0 auto;
+	background: skyblue;
+}
+		/*<!--金融-->*/
+.finance{
+	width: 1200px;
+	height: 290px;
+	margin: 0 auto;
+	background: #e165fc;
+}
+		/*<!--猜你喜欢-->*/
+.you_may_like{
+	width: 1200px;
+	height: 326px;
+	margin: 0 auto;
+	background: #e335fc;
+}
+		/*<!--必买清单-->*/
+.must_buy_wrap{
+	width: 100%;
+	height: auto;
+	background: #f7f7f7;
+}
+.must_buy{
+	height: auto;
+}
+
+		/*<!--楼梯-->*/
+.stairs{
+	width: 100%;
+}
+/*1F*/
+/*2F*/
+/*3F*/
+/*4F*/
+/*5F*/
+/*6F*/
+/*7F*/
+/*8F*/
+/*9F*/
+/*10F*/
+
+		/*<!--热销榜-->*/
+		/*<!--帮助-->*/
+.help{
+	margin: 15px auto 0;
+}
+		/*<!--底部-->*/
+.foot-wrap{
+	background: #f7f7f7;
+}
+.foot{
+	
+}
+		/*<!--侧边栏-->*/
+.sidebar{
+	width: 35px;
+	height: 100%;
+	position: fixed;
+	background: #5c5c5c;
+	top: 0;
+	right: 0;
+}
+.sidebar li{
+	background: url(../img/ui.png) no-repeat center bottom;
+	font-size: 12px;
+	text-align: center;
+}
+.sidebar li a{
+	display: block;
+	height: 38px;
+}
+.sidebar .side-top{
+	position: absolute;
+	display: block;
+  top: 71px;
+  text-align: center;
+}
+.side-top li span{
+	color: #fff;
+	display: block;
+	margin: 12px;
+	width: 12px;
+}
+.icon-user i{
+	position: absolute;
+	text-align: center;
+	width: 28px;
+	height: 18px;
+}
+.side-top .icon-user{
+	background-position: -18px -1024px;
+	
+}
+.icon-user+a{
+}
+.side-bottom{
+	position: absolute;
+	bottom: 10px;
+}
+		

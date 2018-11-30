@@ -1,0 +1,560 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+body, button, input, select, textarea {
+    font: 12px arial,"微软雅黑";
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+b,h1,h2,h3,h4,h5,h6,em,i{
+    font-size: 12px;
+    font-style:normal; 
+    font-weight:normal;
+}
+.wrapbox{
+    width: 1200px;
+    margin: 0 auto;
+}
+i{
+    background-image: url(../img/ui.png);
+}
+
+@mixin pub($w,$h){
+    width: $w;
+    height: $h;
+}
+/*顶部广告*/
+    .advert {
+      background: #c3799a;
+      width: 100%;
+    }
+    .advert div {
+      height: 80px;
+      position: relative;
+    }
+    .close{
+        @include pub(12px,12px);
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        display: block;
+        padding: 6px;
+    }
+    .close i{
+        display: block;
+        @include pub(12px,12px);
+        background-position:-60px -466px;
+    }
+    .close:hover i{
+        background-position: -72px -466px;
+    }
+    .close:hover{
+        background: #000;
+        opacity: 0.5;
+    }
+
+/*top*/
+    .top-wrap{
+        width: 100%;
+        position: relative;
+        border-bottom: 1px solid #f3f3f3;
+        background: #f8f8f8;
+        height: 30px;
+        .top{
+            text-align: center;
+            height: 31px;
+        }
+    }
+    
+    .top li{
+        float: left;
+        line-height: 31px;
+        margin: 0 10px;
+    }
+    .top ul li>a{
+        color: #5e5e5e;
+    }
+    .top ul li b{
+        color: #f5004b;
+    }
+    
+    #dropdown{
+        border: 1px solid #e6e6e6;
+//      border-top: none;
+        z-index: 30;
+        position: absolute;
+        font-size: 12px;    
+        background: #fff;
+        @include pub(330px,auto);
+        display: none;
+        left: -1px;
+    }
+    .public-dropdown{
+        @include pub(310px,56px);
+        margin: 0 auto;
+        padding: 20px 0px 10px 0px;
+    }
+    .public-dropdown i{
+        display: inline-block;
+        width: 55px;
+        float: left;
+        height: 55px;
+        border-radius:50% ;
+        background-image: url(../img/ui.png);
+        background-position:0 -337px;
+        
+    }
+    .public-dropdown p{
+        padding-top: 20px;
+        width: 235px;
+        height: 36px;
+        line-height: 20px;
+    }
+    .public-drop{
+        border-top: 1px solid #f3f3f3;
+        padding-top: 5px;
+        position: relative;
+        width: 310px;
+        margin: 0 auto;
+        p{
+            line-height: 40px;
+            float: left;
+            margin-left: 10px;
+            a{
+                color: #006699;
+            }
+        }
+        b{
+            line-height: 40px;
+            float: right;
+            margin-right: 18px;
+            a{
+                height: 18px;
+                color: rgb(204,204,204);
+            }
+            a:hover{
+                color: #f5004b;
+            }
+        }
+        .p-d-prev{
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 30px;
+            @include pub( 18px,36px );
+            background: url(../img/ui.png) -58px -356px;
+        }
+        .p-d-prev:hover{
+            background-position-y: -513px;
+        }
+        .p-d-next:hover{
+            background-position-y: -513px;
+        }
+        .p-d-next{
+            position: absolute;
+            right: 0;
+            bottom: 30px;
+            display: block;
+            @include pub( 18px,36px );
+            background: url(../img/ui.png) -76px -357px;
+        }
+        div{
+            @include pub(240px,90px);
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            ul{
+                position: absolute;
+                @include pub(720px,90px);
+               li{
+                    @include pub(80px,90px);
+                    margin: 0;
+                    a{
+                        color: rgb(219,208,204);
+                        @include pub(80px,70px);
+                        display: block;
+                        i{
+                            color: rgb(204,204,204);
+                            margin-top: 10px;
+                            margin-bottom: 5px;
+                            display: block;
+                            font-size: 40px;
+                        }
+                        i:hover{
+                            color: rgb(165,165,165);
+                        }
+                    }
+               }
+            }
+        }
+    }
+        
+    .top-l{
+        position: relative;
+        width: 90px;
+    }
+    .top-l>i{
+        position: absolute;
+        top: 12px;
+        right: 5px;
+        background-position: -62px -433px;
+        @include pub(7px,4px);
+        overflow: hidden;
+    }
+    .top-l:hover{
+        width: 88px;
+        height: 55px;
+        background: #fff;
+        border: 1px solid #e6e6e6;
+        border-bottom:none;
+        #dropdown{
+            display: block;
+        }
+    }
+    .top-l:hover>a{
+        color: #f5004b;
+    }
+    .top-l:hover>i{
+        background-position: -55px -433px;
+    }
+    .top ol{
+        
+        text-align: left;
+        padding: 0;
+        float: right;
+        li{
+            width: 80px;
+            position: relative;
+            a{
+                margin-left: 10px;
+            }
+        }
+        li:hover{
+            i{
+                background-position: -55px -433px;
+            }
+            a{
+                color: #f70073;
+            }
+            z-index: 10;
+            
+        }
+        i{
+            right: 8px;
+            position: absolute;
+            top: 12px;
+            @include pub(7px,4px);
+            overflow: hidden;
+            background: url(../img/ui.png);
+            background-position: -62px -433px;
+            
+        }
+        .top-o-3{
+            position: relative;
+            div{
+                top: 30px;
+                position: absolute;
+                right: 0;
+                display: inline-block;
+                height: 200px;
+                width: 200px;
+                background:pink url(../img/ui.png);
+                background-position: 0 -1511px;
+                display: none;
+            }
+        }
+        .top-o-3:hover{
+            width: 78px;
+            border: 1px solid #e6e6e6;
+            border-bottom: none;
+            background: #fff;
+            div{
+                border: 1px solid #e6e6e6;
+                display: block;
+            }
+            
+        }
+        .top-o-2{
+            position: relative;
+            div{
+                top: 30px;
+                display: inline-block;
+                height: 200px;
+                width: 200px;
+                display: none;
+                background: #fff;
+            }
+        }
+        .top-o-2:hover{
+            width: 78px;
+            border: 1px solid #e6e6e6;
+            border-bottom: none;
+            background: #fff;
+            div{
+                border: 1px solid #e6e6e6;
+                display: block;
+            }
+            
+        }
+        .top-o-4{
+            div{
+                position: absolute;
+                right: -100px;
+                top: 30px;
+                height: 200px;
+                width:1198px;
+                display: none;
+                background: #fff;
+            }
+        }
+        .top-o-4:hover{
+            width: 78px;
+            border: 1px solid #e6e6e6;
+            border-bottom: none;
+            background: #fff;
+            div{
+
+                border: 1px solid #e6e6e6;
+                display: block;
+            }
+            
+        }
+        .top-3{
+            position: relative;
+            div{
+                position:absolute;
+                right: 0;
+                top: 30px;
+                display: inline-block;
+                height: 200px;
+                width: 200px;
+                display: none;
+                background: #fff;
+                div{
+                    @include pub(130px,170px);
+                    background:url(../img/ui.png) 0 -799px;
+                    position: absolute;
+                    left: 50%;
+                    margin-left: -65px;
+                    top: 15px;
+                }
+            }
+
+        }
+        .top-3:hover{
+            width: 78px;
+            border: 1px solid #e6e6e6;
+            border-bottom: none;
+            background: #fff;
+            div{
+                border: 1px solid #e6e6e6;
+                display: block;
+                div{
+                    border: none;
+                }
+            }
+            
+        }
+        
+        
+    }
+
+/*搜索*/
+.search-wrap{
+    width: 100%;
+}
+.search{
+    height: 120px;
+}
+.logo{
+    @include pub(125px,120px);
+    position:relative;
+    a{
+        margin: auto; 
+        position: absolute;  
+        top: 0; left: 0; bottom: 0; right: 0;
+        @include pub(125px,56px);
+        display: block;
+        background: url(../img/logo.png);
+    }
+}
+
+
+/*导航栏*/
+.nav-wrap{
+    width: 100%;
+    background: #f8f8f8;
+}
+.nav{
+    height: 40px;
+}
+/*轮播图*/
+.main{
+    height: 450px;
+    width: 100%;
+    position: relative;
+    background-color: rgb(249,81,68);
+}
+.main ul{
+    @include pub(750px,450px);
+    position:relative;
+    margin: 0 auto;
+}
+.main ul>li{
+    position:absolute;
+    top:0;
+    left:0;
+    height: 450px;
+    width: 750px;
+}
+.main ul>li a{
+    width: 750px;
+    height: 450px;
+    position: absolute;
+}
+.main ul li img{
+    width: 750px;
+    height: 450px;
+}
+.main ol{
+    position: absolute;
+    bottom: 10px;
+    width: 304px;
+    left: 50%;
+    margin-left: -114px;
+}
+.main ol li{
+    @include pub(30px,5px);
+    float: left;
+    margin: 0 4px;
+    text-align: center;
+    opacity: 0.3;
+    background-color: rgb(0, 0, 0);
+}
+.main ol li a{
+    @include pub(30px,5px);
+    display: block;
+}
+
+        /*<!--美日必抢-->*/
+.mr-wrap{
+    width: 100%;
+}
+.mr{
+    height: 272px;
+    background: pink;
+}
+        /*<!--淘实惠 购新潮-->*/
+.tao-wrap{
+    width: 100%;
+}
+.tao{
+    height: 481px;
+    background: yellow;
+}
+
+        /*<!--领券中心-->*/
+.quan{
+    @include pub(1200px,110px);
+    margin: 0 auto;
+    background: skyblue;
+}
+        /*<!--金融-->*/
+.finance{
+    @include pub(1200px,290px);
+    margin: 0 auto;
+    background: #e165fc;
+}
+        /*<!--猜你喜欢-->*/
+.you_may_like{
+    @include pub(1200px,326px);
+    margin: 0 auto;
+    background: #e335fc;
+}
+        /*<!--必买清单-->*/
+.must_buy_wrap{
+    width: 100%;
+    height: auto;
+    background: #f7f7f7;
+}
+.must_buy{
+    height: auto;
+}
+
+        /*<!--楼梯-->*/
+.stairs{
+    width: 100%;
+}
+/*1F*/
+/*2F*/
+/*3F*/
+/*4F*/
+/*5F*/
+/*6F*/
+/*7F*/
+/*8F*/
+/*9F*/
+/*10F*/
+
+        /*<!--热销榜-->*/
+        /*<!--帮助-->*/
+.help{
+    margin: 15px auto 0;
+}
+        /*<!--底部-->*/
+.foot-wrap{
+    background: #f7f7f7;
+}
+.foot{
+    
+}
+        /*<!--侧边栏-->*/
+.sidebar{
+    @include pub(35px,100%);
+    position: fixed;
+    background: #5c5c5c;
+    top: 0;
+    right: 0;
+}
+.sidebar li{
+    background: url(../img/ui.png) no-repeat center bottom;
+    font-size: 12px;
+    text-align: center;
+}
+.sidebar li a{
+    display: block;
+    height: 38px;
+}
+.sidebar .side-top{
+    position: absolute;
+    display: block;
+    top: 71px;
+    text-align: center;
+}
+.side-top li span{
+    color: #fff;
+    display: block;
+    margin: 12px;
+    width: 12px;
+}
+.icon-user i{
+    @include pub(28px,18px);
+    position: absolute;
+    text-align: center;
+}
+.side-top .icon-user{
+    background-position: -18px -1024px;
+}
+.icon-user+a{
+}
+.side-bottom{
+    position: absolute;
+    bottom: 10px;
+}
+        
