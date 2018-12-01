@@ -59,3 +59,51 @@ function Vip(){
 	})
 }
 Vip();
+
+function search(){
+	$(".search-left div").mouseenter(function(){
+		$(".search-left ul").css("display","block");
+		$(".search-left div i").css("background-position","-55px -433px");
+	}).mouseleave(function(){
+		$(".search-left ul").css("display","none");
+		$(".search-left div i").css("background-position","-62px -433px");
+		
+	})
+	$(".search-left ul").mouseenter(function(){
+		$(".search-left ul").css("display","block");
+		$(".search-left div i").css("background-position","-55px -433px");
+	}).mouseleave(function(){
+		$(".search-left ul").css("display","none");
+		$(".search-left div i").css("background-position","-62px -433px");
+	})
+	$(".search-left ul li").mouseenter(function(){
+		$(this).css("background","#E9E9E9").siblings().css("background","");
+	}).click(function(){
+		$(".search-left div span").html($(this).html());
+	})
+}
+search();
+
+//全部商品分类
+function all(){
+	$(".bannerLeft li").mouseenter(function(){
+		$(".subnav").css("display","block");
+	}).mouseleave(function(){
+		$(".subnav").css("display","none");
+	})
+	$(".subnav").mouseenter(function(){
+		$(this).css("display","block");
+	}).mouseleave(function(){
+		$(this).css("display","none");
+	})
+	
+}
+all();
+
+//猜你喜欢
+function like(){
+	$(".change-btn-next").click(function(){
+		$(".like-bottom").css("left","-1200px");
+	})
+	$(".")
+}
