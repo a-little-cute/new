@@ -1,0 +1,58 @@
+*{
+    margin: 0 ;
+    padding: 0;
+}
+.Tip{
+    background-color: #fff4e3;
+    border-top: 1px solid #fee6bc;
+    .safeTip{
+        text-align: center;
+        width: 1200px;
+        margin: 0 auto;
+        height: 29px;
+        padding-left: 10px;
+        background-color: #fff4e3;
+        color: #ff7f23;
+        font: 400 12px/29px "Microsoft Yahei";
+    }
+}
+
+header{
+    width: 990px;
+    height: 120px;
+    margin: 0 auto;
+    #logo{
+        margin: 18px 40px 0 0;
+        a{
+            display: block;
+            background: url(../img/loginlogo.png) no-repeat;
+            width: 300px;
+            height: 62px;
+            margin-top: 13px;
+            text-indent: -99px;
+	        overflow: hidden;
+        }
+    }
+}
+
+.content{
+    height: 480px;
+    width: 100%;
+    background: #c00;
+    .main{
+        width: 1200px;
+        height: 480px;
+        margin: 0 auto;
+        background:no-repeat url(../img/T1lb__B_Vv1RCvBVdK.jpg) ;
+        background-size: cover;
+        .login_box{
+            width: 350px;
+            float: right;
+            margin-top: 24px;
+            margin-right: 105px;
+            position: relative;
+            background: #fff;
+            overflow: visible;
+        }
+    }
+}

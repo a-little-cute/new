@@ -99,11 +99,54 @@ function all(){
 	
 }
 all();
-
+$.extend({
+	like : function(){
+		$(".change-btn-next").click(function(){
+			$(".like-bottom").css("left","-1200px");
+		})
+	}
+})
 //猜你喜欢
-function like(){
-	$(".change-btn-next").click(function(){
-		$(".like-bottom").css("left","-1200px");
-	})
-	$(".")
-}
+$.like();
+$.fn.extend({
+	fnMouseenter : function(){
+		this.on("mouseenter","li",function(){
+			var index = $(this).index();
+			$(this).parent().attr("index",index);
+			var hcolor = $(this).parent().attr("hcolor");
+			$(this).css({"background":hcolor})
+					.children()
+					.css("color","#fff")
+					.end()
+				   .siblings()
+				   .css("background","")
+				   .children()
+				   .css("color","#5E5E5E");
+			$(this).parent().parent().parent().find(".mc_main").eq(index).css("display","block").siblings(".mc_main").css("display","none");
+		})
+	},
+	fnClick : function(){
+		this.click(function(){
+			var $tab = $(this).parent().parent().parent().find(".tab");
+			var index = $tab.attr("index");
+			console.log(index);
+			if( index == 4 ){
+				index = -1;
+			}
+			index++
+			var hcolor = $(".tab").attr("hcolor");
+			$tab.find("li").eq(index).css({"background":hcolor}).children().css("color","#fff").end().siblings()
+				   .css("background","").children().css("color","#5E5E5E");
+			$(this).parent().parent().parent().find(".mc_main").eq(index).css("display","block").siblings(".mc_main").css("display","none");
+			$tab.attr("index",index);
+		})
+	}
+})
+$(".Louti1 .tab").fnMouseenter();
+$(".Louti2 .tab").fnMouseenter();
+$(".Louti3 .tab").fnMouseenter();
+$(".Louti4 .tab").fnMouseenter();
+$(".Louti1 .mc>.slider_page .slider_down").fnClick();
+$(".Louti2 .mc>.slider_page .slider_down").fnClick();
+$(".Louti3 .mc>.slider_page .slider_down").fnClick();
+$(".Louti4 .mc>.slider_page .slider_down").fnClick();
