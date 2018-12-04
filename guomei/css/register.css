@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font: 12px/1.5 Arial,simsun; }
+
+a {
+  text-decoration: none;
+  font-size: 12px; }
+
+ul, li {
+  list-style: none; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.Tip {
+  background-color: #fff4e3;
+  border-top: 1px solid #fee6bc; }
+  .Tip .safeTip {
+    text-align: center;
+    width: 1200px;
+    margin: 0 auto;
+    height: 29px;
+    padding-left: 10px;
+    background-color: #fff4e3;
+    color: #ff7f23;
+    font: 400 12px/29px "Microsoft Yahei"; }
+
+header {
+  width: 990px;
+  height: 120px;
+  margin: 0 auto; }
+  header #logo {
+    margin: 18px 40px 0 0; }
+    header #logo a {
+      display: block;
+      background: url(../img/registerlogo.png) no-repeat;
+      width: 300px;
+      height: 62px;
+      margin-top: 13px;
+      text-indent: -99px;
+      overflow: hidden; }
+
+.register {
+  width: 990px;
+  padding-bottom: 50px;
+  border: 1px solid #E6E6E6;
+  margin: 0 auto;
+  position: relative; }
+  .register .main {
+    background: url(../img/T1E1VjB7YT1RCvBVdK.png) no-repeat scroll 580px -60px; }
+  .register .title {
+    position: absolute;
+    top: -42px;
+    left: 149px; }
+    .register .title li {
+      float: left;
+      width: 150px;
+      height: 40px;
+      text-align: center;
+      font: bold 14px/41px "Microsoft YaHei";
+      margin-left: 2px;
+      color: #5e5e5e;
+      background: #F3F3F3;
+      border: 1px solid #e6e6e6;
+      border-bottom: 0 none; }
+  .register .title li.cur {
+    background: #fff;
+    color: #cc0000;
+    border-top: 2px solid #cc0000; }
+  .register .login-info {
+    font-size: 12px;
+    position: absolute;
+    top: -25px;
+    right: 20px; }
+  .register .registerBox {
+    padding-top: 40px; }
+  .register form > div {
+    margin-bottom: 20px;
+    position: relative; }
+    .register form > div input {
+      width: 288px;
+      height: 36px;
+      padding: 0 4px;
+      border: 1px solid #ccc;
+      font: normal 14px/36px Arial,"Simsun";
+      color: #a5a5a5;
+      vertical-align: middle;
+      position: relative;
+      margin-left: 160px; }
+  .register .reg-label {
+    display: inline-block;
+    width: 151px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 16px;
+    text-align: right;
+    color: #888888;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .register #Rbtn {
+    background-color: #ff5757;
+    border: 0 none;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font: 16px/40px "Microsoft YaHei";
+    height: 40px;
+    text-align: center;
+    width: 298px;
+    margin-top: 5px;
+    margin-left: 151px; }
+
+.s1, .s2, .s3, .s4, .s5 {
+  background-color: #ffffff;
+  padding: 9px 5px 9px 5px;
+  line-height: 18px;
+  position: absolute;
+  float: left;
+  border: 1px solid #ccc;
+  display: none;
+  margin-left: 2px;
+  color: #A5A5A5; }
+
+/*# sourceMappingURL=register.css.map */

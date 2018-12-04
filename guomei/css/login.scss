@@ -1,6 +1,24 @@
+@charset "utf-8";
 *{
     margin: 0 ;
     padding: 0;
+}
+a{
+  text-decoration: none;  
+  font-size: 12px;
+}
+ul,li{
+    list-style: none;
+}
+body{
+    color: #A5A5A5;
+    font: 12px/1.5 Arial,simsun;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
 }
 .Tip{
     background-color: #fff4e3;
@@ -45,7 +63,7 @@ header{
         margin: 0 auto;
         background:no-repeat url(../img/T1lb__B_Vv1RCvBVdK.jpg) ;
         background-size: cover;
-        .login_box{
+        .login{
             width: 350px;
             float: right;
             margin-top: 24px;
@@ -54,5 +72,141 @@ header{
             background: #fff;
             overflow: visible;
         }
+    }
+}
+.login{
+    .login_head{
+        text-align: center;
+        position: relative;
+        height: 54px;
+        line-height: 54px;
+        border-bottom: 1px solid #f4f4f4;
+        
+        div{
+            position: absolute;
+            text-align: center;
+            width: 50%;
+            top: 16px;
+            a{
+                font: 500 18px "Microsoft Yahei";
+            }
+        }
+        .h_left{
+            left: 0;
+        }
+        .h_right{
+            right: 0;
+        }
+        a{
+            color: #5e5e5e;
+            display: block;
+            width: 100%;
+        }
+        .h_left a{
+            border-right: 1px solid #f4f4f4;
+        }
+    }
+    .loginBox{
+        >div{
+            margin: 30px 0;
+            width: 350px;
+            height: 165px;
+            position: relative;
+            .login_top{
+                .qrcode-Image{
+                    position: absolute;
+                }
+            }
+        }
+        .qrcode-desc,.smCode,a{
+            font-size: 12px;
+            text-align: center;
+        }
+        .fre{
+            color: #069;
+            margin-right: 32px;
+            margin-bottom: 10px;
+            float: right;
+        }
+    } 
+    .loginBox2{
+        form{
+            width: 300px;
+            height: 249px;
+            margin: 0 auto;
+            text-align: center;
+            #uname,#upwd,#btn{
+                margin:0 0 10px 0 ;
+                position: relative;
+                padding: 8px 10px 7px;
+                width: 268px;
+                height: 25px;
+                background: url(../capital-tip-common.png) no-repeat -500px 0 transparent;
+                border: 1px solid #CCC;
+                outline: 0 none;
+            }
+             #uname{
+                 margin-top: 10px;
+             }
+            #btn{
+                width: 290px;
+                color: #fff;
+                height: 42px;
+                background: #ff5757;
+                margin-top: 30px;
+            }
+            
+        }
+    } 
+    .loginBottom{
+        padding: 9px 0px;
+        width: 350px;
+        height: 20px;
+        float: left;
+        overflow: hidden;
+        background: #fcfcfc;
+        ul{
+            margin: 0 20px;
+            width: 300px;
+            li{
+                float: left;
+                a{
+                    border-right: 1px solid #e6e6e6;
+                    float: left;
+                    white-space: nowrap;
+                    cursor: pointer;
+                    color: #5e5e5e;
+                    padding: 0 8px;
+                    margin: 6px 0;
+                }
+            }
+        }
+        .icon{
+            width: 19px;
+            height: 19px;
+            display: inline-block;
+            background: url(../img/login-bg-common.png) 0 0 ;
+            margin: 5px 0 0 5px;
+        }
+    } 
+}
+#s1{
+    width: 290px;
+    height: 20px;
+    background: #fee;
+    margin: 5px 0 0 5px;
+    span{
+        width: 14px;
+        height: 14px;
+        overflow: hidden;
+        float: left;
+        margin: 4px 3px 0 10px;
+        display: inline-block;
+        background: url(../img/spr-icon.png) -41px -54px;
+    }
+    p{
+        color:#e3111e;
+        float: left;
+        line-height: 20px;
     }
 }

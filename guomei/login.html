@@ -2,8 +2,9 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>登录</title>
 		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<link rel="stylesheet" type="text/css" href="css/Regi_Login.css"/>
 	</head>
 	<body>
 		<header>
@@ -12,20 +13,93 @@
 		<div class="Tip">
 			<p class="safeTip"><em></em>
 				依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！新版
-				<a href="" target="_blank">《国美隐私政策》</a>
+				<a href="#" style="color: #069;">《国美隐私政策》</a>
 				已上线，将更有利于保护您的个人隐私。</p>
 		</div>
 		<div class="content">
 			<div class="main">
-				<div class="login_box">
+				<div class="login">
 					<div class="login_head">
 						<div class="h_left">
-							扫码登录
+							<a href="">扫码登录</a>
 						</div>
+						<div class="h_right">
+							<a href="">账户登录</a>
+						</div>
+					</div>
+					<div class="loginBox" style="display: none;">
+						<div>
+							<div class="login_top">
+								<div class="qrcode-Image" style="left: 92px;">
+									<img src="img/getQrcode.png" width="165" height="165">
+								</div>
+							</div>
+						</div>
+						<p class="qrcode-desc">打开手机
+							<a title="国美" style="color: #CC0000;">国美</a>
+						</p>
+						<p class="smCode">扫一扫登录</p>
+						<a href="#" class="fre">免费注册</a>
+					</div>
+					<div class="loginBox2">
+						<form action="" method="post">
+							<div id="s1" style="display: none;">
+								<span></span>
+								<p>账号或密码不匹配，请重新输入</p>
+							</div>
+							<input type="text" name="uname" id="uname" placeholder="手机号码/用户名" value="" /><br />
+							<input type="password" name="upwd" id="upwd" placeholder="密码" /><br />
+							<input type="checkbox" name="" id="ck" class="left" value="" /><span class="left">自动登陆</span>
+							<a class="right" href="">免费注册</a><a href="" class="right">忘记密码</a><br />
+							<input type="button" id="btn" value="登陆"/>
+							<a href="" class="left">手机号快速登陆（支持门店预留手机）</a>
+						</form>
+					</div>
+					<div class="loginBottom">
+						<ul>
+							<li><a href="">门店会员卡登录</a></li>
+							<li><a href="">QQ</a></li>
+							<li><a href="">微信</a></li>
+							<li><a href="">微博</a></li>
+							<li><a href="" style="border: none;">美付宝</a></li>
+							<li><a href="">支付宝</a></li>
+							<li><a href="">吉信通</a></li>
+						</ul>
+						<i class="icon"></i>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="foot"></div>
+		<div class="foot_wrap">
+			<div class="foot">
+				
+			</div>
+		</div>
 	</body>
 </html>
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+//	loginBottom
+	$(".icon").click(function(){
+		$(".loginBottom").css("height","55px");
+	})
+	
+	$("#btn").click(function(){
+		var uname = $("#uname").val();
+		var upwd = $("#upwd").val();
+		var data = `status=login&uname=${uname}&upwd=${upwd}`;
+
+		
+		$.ajax({
+			type :"get",
+			url : "http://localhost/guomei/guomei/php/login_register.php?" + data,
+			success : function(msg){
+				if( msg==1 ){
+					alert("登陆成功");
+				}else{
+					$("#s1").css("display","block");
+				}
+			}
+		})
+	})
+</script>

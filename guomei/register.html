@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<link rel="stylesheet" type="text/css" href="css/register.css"/>
+		<link rel="stylesheet" type="text/css" href="css/Regi_Login.css"/>
+	</head>
+	<body>
+		<header>
+		    <div id="logo"><a data-code="public03001" href="https://www.gome.com.cn/?intcmp=null-public03001">国美</a></div>
+		</header>
+		
+		<div class="register">
+			<div class="main">
+				<p class="login-info">我已经注册，现在就<a href="login.html">登录</a></p>
+		        <ul class="title">
+		          <li class="cur">个人用户注册</li>
+		          <li id="goTo">企业用户注册</li>
+		        </ul>
+				
+				<div class="registerBox">
+					<form action="" method="post">
+						<!--用户名-->
+						<div class="nameDiv">
+							<span class="reg-label">
+				                <label for="uname">用户名：</label>
+				            </span>
+				            <input id="uname" name="uname" maxlength="25"  tabindex="1" class="i-text" onkeypress="if(event.keyCode==13||event.which==13){return false;}"  type="text" autocomplete="off">
+		                	<span class="s1"></span>
+						</div>	
+	              		<!--密码-->
+	              		<div>
+							<span class="reg-label">
+				                <label for="">设置密码：</label>
+				            </span>
+				            <input id="upwd" maxlength="25" name="upwd" type="password">
+		                	<span class="s2">4-20个字符，支持汉字、字母、数字及“-”、“_”组合</span>
+                  		</div>
+                  		<!--确认密码：-->
+	                  	<div>
+							<span class="reg-label">
+				                <label for="">确认密码：</label>
+				            </span>
+				            
+				            <input type="password" name="rpwd" id="rpwd" disabled="disabled"  />
+		                	<span class="s3">4-20个字符，支持汉字、字母、数字及“-”、“_”组合</span>
+				            
+                  		</div>
+                  		<!--手机号码-->
+                  		<div>
+							<span class="reg-label">
+				                <label for="">手机号码：</label>
+				            </span>
+				            
+				            <input type="tel" name="tel" id="tel" />
+				            <span class="s4"></span>
+				            
+                  		</div>
+                  		<div>
+							<span class="reg-label">
+				                <label for="">滑动验证：</label>
+				            </span>
+				            <input type="text" name="yz" id="yz" />
+		                	<!--<div id="nameFocusbox" class="msg-box" style="display: none;">
+			                    <div class="msg-cont">字及“-”、“_”组合</div>
+	                  		</div>-->
+                  		</div>
+                  		<div>
+							<span class="reg-label">
+				                <label for="">短信验证码：</label>
+				            </span>
+				            <input type="tel" name="message" id="message" />
+		                	<span class="s5"></span>
+                  		</div>
+                  		<div>
+							<span class="reg-label">
+				                <label for="">推荐码(选填)：</label>
+				            </span>
+				            <input type="tel" name="tui" id="tui" />
+		                	<!--<div id="nameFocusbox" class="msg-box" style="display: none;">
+			                    <div class="msg-cont">字及“-”、“_”组合</div>
+	                  		</div>-->
+                  		</div>
+						<input type="button" id="Rbtn" value="立即注册"/>
+					</form>
+				</div>
+				
+			</div>
+		</div>
+		<div class="foot_wrap">
+			<div class="foot">
+				
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+//	用户名
+	$("#uname").focus(function(){
+		$(".s1").html("4-20个字符，支持汉字、字母、数字及“-”、“_”组合").css("display","inline");
+	})
+	var flagName = null;
+	$("#uname").blur(function(){
+		var uname = $("#uname").val();
+		var reg = /^(\w|[\u4e00-\u9fa5]|-){4,20}$/;
+		var reg1 = /^\d{4,20}$/;//纯数字
+		if( reg1.test( uname ) ){
+			$(".s1").html("不能为纯数字，请重新输入").css({"display":"inline","color":"red"});
+			$("#uname").css({"border-color":"red"})
+			flagName = false;
+		}else if( reg.test( uname ) ){
+			$(".s1").html("").css({"display":"none"});
+			$("#uname").css({"border-color":"#ccc"})
+			flagName = true;
+		} 
+		
+	})
+	
+//	密码
+	$("#upwd").focus(function(){
+		$(".s2").html("6-20个字符，建议由字母、数字与符号两种以上组成").css("display","inline");
+	})
+	var flagPwd = null;
+	$("#upwd").blur(function(){
+		var upwd = $("#upwd").val();
+		var reg = /^(\w|&|@){6,20}$/;
+		var reg1 = /^\d{6,20}$/;//纯数字
+		if( reg1.test( upwd ) ){
+			$(".s2").html("不能全为数字").css({"display":"inline","color":"red"});
+			$("#upwd").css({"border-color":"red"})
+			flagPwd = false;
+		}else if( reg.test( upwd ) ){
+			$(".s2").html("").css({"display":"none","color":"#a5a5a5"});
+			$("#upwd").css({"border-color":"#ccc"})
+			$("#rpwd").prop("disabled",false);
+			flagPwd = true;
+		} 
+		
+	})
+	
+//	确认密码
+	$("#rpwd").focus(function(){
+		$(".s3").html("请再次输入密码").css("display","inline");
+	})
+	var flagRpwd = null;
+	$("#rpwd").blur(function(){
+		var pwd = $("#upwd").val();
+		var rpwd = $("#rpwd").val();
+		
+		if( pwd == rpwd ){
+			$(".s3").html("").css({"display":"none","color":"#a5a5a5"});
+			$("#rpwd").css({"border-color":"#ccc"})
+			$("#rpwd").prop("disabled",false);
+			flagRpwd = true;
+		}else{
+			$(".s3").html("两次密码不一致").css({"display":"inline","color":"red"});
+			$("#rpwd").css({"border-color":"red"})
+			flagRpwd = false;
+			
+		} 
+		
+	})
+//手机号
+	var flagTel = null;
+	$("#tel").blur(function(){
+		var tel = $("#tel").val();
+		var reg = /^1(3|5|8)\d{9}$/;
+		console.log(tel.length)
+		if( tel.length=="0" ){
+			$(".s4").html("手机号不能为空").css({"display":"inline","color":"red"});
+			$("#tel").css({"border-color":"red"})
+			flagTel = false;
+		}else if( !reg.test(tel) ){
+			$(".s4").html("手机号码格式有误，请重新输入").css({"display":"inline","color":"red"});
+			$("#tel").css({"border-color":"red"})
+			flagTel = false;
+		}else if( reg.test(tel) ){
+			$(".s4").html("").css({"display":"none","color":"#a5a5a5"});
+			$("#tel").css({"border-color":"#ccc"})
+			flagTel = true;
+		}
+		
+	})
+	
+	
+	$("#Rbtn").click(function(){
+		
+		if( !flagTel || !flagName || !flagRpwd || !flagPwd ){
+			return false;
+		}
+		
+		var uname = $("#uname").val();
+		var upwd = $("#upwd").val();
+		var tel = $("#tel").val();
+		var data = `status=register&uname=${uname}&upwd=${upwd}&tel=${tel}`;
+			
+		$.ajax({
+			type :"get",
+			url : "http://localhost/guomei/guomei/php/login_register.php?" + data,
+			success : function(msg){
+				if(msg){
+					alert("注册成功");
+					location.href="login.html";
+				}else{
+					alert("注册失败");
+				}
+			}
+		})
+	})
+	
+
+</script>

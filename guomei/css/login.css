@@ -2,6 +2,23 @@
   margin: 0;
   padding: 0; }
 
+a {
+  text-decoration: none;
+  font-size: 12px; }
+
+ul, li {
+  list-style: none; }
+
+body {
+  color: #A5A5A5;
+  font: 12px/1.5 Arial,simsun; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
 .Tip {
   background-color: #fff4e3;
   border-top: 1px solid #fee6bc; }
@@ -40,7 +57,7 @@ header {
     margin: 0 auto;
     background: no-repeat url(../img/T1lb__B_Vv1RCvBVdK.jpg);
     background-size: cover; }
-    .content .main .login_box {
+    .content .main .login {
       width: 350px;
       float: right;
       margin-top: 24px;
@@ -48,5 +65,110 @@ header {
       position: relative;
       background: #fff;
       overflow: visible; }
+
+.login .login_head {
+  text-align: center;
+  position: relative;
+  height: 54px;
+  line-height: 54px;
+  border-bottom: 1px solid #f4f4f4; }
+  .login .login_head div {
+    position: absolute;
+    text-align: center;
+    width: 50%;
+    top: 16px; }
+    .login .login_head div a {
+      font: 500 18px "Microsoft Yahei"; }
+  .login .login_head .h_left {
+    left: 0; }
+  .login .login_head .h_right {
+    right: 0; }
+  .login .login_head a {
+    color: #5e5e5e;
+    display: block;
+    width: 100%; }
+  .login .login_head .h_left a {
+    border-right: 1px solid #f4f4f4; }
+.login .loginBox > div {
+  margin: 30px 0;
+  width: 350px;
+  height: 165px;
+  position: relative; }
+  .login .loginBox > div .login_top .qrcode-Image {
+    position: absolute; }
+.login .loginBox .qrcode-desc, .login .loginBox .smCode, .login .loginBox a {
+  font-size: 12px;
+  text-align: center; }
+.login .loginBox .fre {
+  color: #069;
+  margin-right: 32px;
+  margin-bottom: 10px;
+  float: right; }
+.login .loginBox2 form {
+  width: 300px;
+  height: 249px;
+  margin: 0 auto;
+  text-align: center; }
+  .login .loginBox2 form #uname, .login .loginBox2 form #upwd, .login .loginBox2 form #btn {
+    margin: 0 0 10px 0;
+    position: relative;
+    padding: 8px 10px 7px;
+    width: 268px;
+    height: 25px;
+    background: url(../capital-tip-common.png) no-repeat -500px 0 transparent;
+    border: 1px solid #CCC;
+    outline: 0 none; }
+  .login .loginBox2 form #uname {
+    margin-top: 10px; }
+  .login .loginBox2 form #btn {
+    width: 290px;
+    color: #fff;
+    height: 42px;
+    background: #ff5757;
+    margin-top: 30px; }
+.login .loginBottom {
+  padding: 9px 0px;
+  width: 350px;
+  height: 20px;
+  float: left;
+  overflow: hidden;
+  background: #fcfcfc; }
+  .login .loginBottom ul {
+    margin: 0 20px;
+    width: 300px; }
+    .login .loginBottom ul li {
+      float: left; }
+      .login .loginBottom ul li a {
+        border-right: 1px solid #e6e6e6;
+        float: left;
+        white-space: nowrap;
+        cursor: pointer;
+        color: #5e5e5e;
+        padding: 0 8px;
+        margin: 6px 0; }
+  .login .loginBottom .icon {
+    width: 19px;
+    height: 19px;
+    display: inline-block;
+    background: url(../img/login-bg-common.png) 0 0;
+    margin: 5px 0 0 5px; }
+
+#s1 {
+  width: 290px;
+  height: 20px;
+  background: #fee;
+  margin: 5px 0 0 5px; }
+  #s1 span {
+    width: 14px;
+    height: 14px;
+    overflow: hidden;
+    float: left;
+    margin: 4px 3px 0 10px;
+    display: inline-block;
+    background: url(../img/spr-icon.png) -41px -54px; }
+  #s1 p {
+    color: #e3111e;
+    float: left;
+    line-height: 20px; }
 
 /*# sourceMappingURL=login.css.map */
