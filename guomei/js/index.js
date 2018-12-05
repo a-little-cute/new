@@ -129,7 +129,6 @@ $.fn.extend({
 		this.click(function(){
 			var $tab = $(this).parent().parent().parent().find(".tab");
 			var index = $tab.attr("index");
-			console.log(index);
 			if( index == 4 ){
 				index = -1;
 			}
@@ -150,3 +149,64 @@ $(".Louti1 .mc>.slider_page .slider_down").fnClick();
 $(".Louti2 .mc>.slider_page .slider_down").fnClick();
 $(".Louti3 .mc>.slider_page .slider_down").fnClick();
 $(".Louti4 .mc>.slider_page .slider_down").fnClick();
+
+	var $list = $("#LoutiNav li:not(.last)"),//楼层号
+		$floor = $(".louti"),
+		flag = true;//假设值为true时  滚动条可以操作
+		console.log($floor);
+	$list.click(function(){
+		flag = false;
+		$(this).addClass("red")
+			   .siblings()
+			   .removeClass("red");
+		//获取当前点击的楼层号的下标
+		var index = $(this).index();
+		//根据下标获取index对应的楼层相对于内容窗口顶部的距离
+		var t = $floor.eq(index).offset().top;
+		//设置滚动条滚动的距离 为 t
+		$("html,body").animate({"scrollTop":t},1000,function(){
+			//运动完成后  将开关变量的值变成true
+			flag = true;
+		});
+	})
+	//回到顶部
+	$(".up").click(function(){
+		flag = false;
+		$("html,body").animate({"scrollTop":0},1000,function(){
+			flag = true;
+		});
+	})
+	//去底部
+	$(".down").click(function(){
+		flag = false;
+		$("html,body").animate({"scrollTop":$("body").height()},1000,function(){
+			flag = true;
+		});
+	})
+	//操作滚动条
+	$(window).scroll( function(){
+		if( $(document).scrollTop()>1650 ){
+			$("#LoutiNav").show();
+		}else{
+			$("#LoutiNav").hide();
+		}
+		if( flag ){
+			var sTop = $(document).scrollTop();
+			//得到满足某个条件的楼层
+			//条件 绝对值(页面滚走的距离-某个楼层的top值) < 楼层高度的一半
+			var $f = $floor.filter( function(){
+				//返回满足某个条件的元素
+				return Math.abs( sTop - $(this).offset().top ) < $(this).outerHeight()/2;
+			} )
+			var index = $f.index();//获取满足某个条件的楼层的下标
+			if( index != -1 ){
+				//根据下标找到楼层号并高亮显示
+				$list.eq(index).addClass("red")
+			   				   .siblings()
+			   				   .removeClass("red");
+			}
+			if( sTop < 100 ){
+				$list.removeClass("red");
+			}
+		}
+	} )

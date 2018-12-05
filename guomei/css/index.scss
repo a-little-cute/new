@@ -61,7 +61,7 @@ i{
         background: #000;
         opacity: 0.5;
     }
-
+    
 /*top*/
     .top-wrap{
         width: 100%;
@@ -455,7 +455,18 @@ i{
             background-size: 13px 19px;
         }
     }
-    button{
+    .butto{
+        width: 90px;
+        height: 30px;
+        border: 0;
+        float: right;
+        display: inline;
+        background: #dd00a7;
+        color: #fff;
+        font: 16px/30px 'microsoft yahei';
+        outline: none;
+    }
+    .sear{
         width: 90px;
         height: 30px;
         border: 0;
@@ -465,8 +476,6 @@ i{
         background: #dd00a7;
         font: 16px/30px 'microsoft yahei';
         color: #fff;
-        letter-spacing: 2px;
-        text-indent: 0;
         outline: none;
     }
     .search-bottom{
@@ -1174,6 +1183,7 @@ i{
 }
 
         /*<!--楼梯-->*/
+
 #LoutiNav{
     position: fixed;
     top: 25%;
@@ -1181,30 +1191,46 @@ i{
     width:66px;
     border: 1px solid ;
     text-align: center;
+    z-index: 999;
+//  display: none;
     ul{ 
+        width: 66px;
+        overflow: hidden;
         li{
-        @include pub(66px,44px);
-        position:relative;
-        list-style:none;
-        text-align:center;
-        line-height: 30px;
-        font-size: 12px;
-        cursor: pointer;
-        border-bottom: 1px dotted #AAAAAA;
+            height: 43px;
+            position: relative;
+            line-height: 5px;
+            border-top: none;
+            list-style:none;
+            text-align:center;
+            line-height: 18px;
+            font-size: 12px;
+            cursor: pointer;
+            border-bottom: 1px dotted #AAAAAA;
+            span:nth-child(1){
+                width: 100%;
+                display: block;
+                height: 16px;
+                overflow: hidden;
+                cursor: pointer;
+            }
+            span:nth-child(1){
+                line-height: 24px;
+                height: 22px;
+            }
+        }
+        li.red{
+            color: red;
+        }
         li.last {
           background: darkred;
           color: white;
           border-bottom: none;
-          span{
-              line-height: 22px;
-              display: block;
-          }
-          }
+          line-height: 44px;
         }
     }
             li:hover{
-                background: darkred;
-                color: white;
+                color: red;
             }
             
             
@@ -1543,16 +1569,6 @@ i{
 
 }
 
-/*1F*/
-/*2F*/
-/*3F*/
-/*4F*/
-/*5F*/
-/*6F*/
-/*7F*/
-/*8F*/
-/*9F*/
-/*10F*/
 
         /*<!--热销榜-->*/
         /*<!--帮助-->*/
@@ -1778,7 +1794,7 @@ i{
     right: 0;
 }
 .sidebar li{
-    background: url(../img/ui.png) no-repeat center bottom;
+//  background: url(../img/ui.png) no-repeat center bottom;
     font-size: 12px;
     text-align: center;
 }

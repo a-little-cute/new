@@ -188,6 +188,12 @@ header{
             background: url(../img/login-bg-common.png) 0 0 ;
             margin: 5px 0 0 5px;
         }
+        .active{
+            background-position-y:-25px;
+        }
+    }
+    .active1{
+        height: 55px;
     } 
 }
 #s1{

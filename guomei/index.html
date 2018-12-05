@@ -82,8 +82,8 @@
 							</div>
 						</div>
 					</li>
-					<li><a href="#">登陆</a></li>
-					<li><a href="#"><b>注册有礼</b></a></li>
+					<li><a href="login.html">登陆</a></li>
+					<li><a href="register.html"><b>注册有礼</b></a></li>
 				</ul>
 				<ol>
 					<li><a href="#">我的订单</a></li>
@@ -145,7 +145,7 @@
 						<input type="text" name="" id="" value="" />
 						<p></p>
 					</div>
-					<button type="button">搜索</button>
+					<button class="butto" type="button">搜索</button>
 					<div class="search-bottom">
 						<a href="#" class="highlight">立省500</a>
 						<a href="#">优惠购金</a>
@@ -751,24 +751,24 @@
 			</div>
 		</div>
 		<!--楼梯-->
-		<div id="LoutiNav">
+		<div id="LoutiNav" style="display: none;">
 			<ul>
-				<li>1F <span>服饰</span> </li>
-				<li>2F <span>美妆</span> </li>
-				<li>3F <span>手机</span> </li>
-				<li>4F <span>家电</span> </li>
-				<li>5F <span>数码</span> </li>
-				<li>6F <span>运动</span> </li>
-				<li>7F <span>居家</span> </li>
-				<li>8F <span>母婴</span> </li>
-				<li>9F <span>食品</span> </li>
-				<li>10F <span>图书</span> </li>
-				<li>11F <span>服务</span> </li>
-				<li class="last">Top</li>
+				<li><span>1F</span><span>手机通讯</span></li>
+				<li><span>2F</span> <span>电脑数码</span> </li>
+				<li><span>3F</span> <span>家用电器</span> </li>
+				<li><span>4F</span> <span>厨房卫浴</span> </li>
+				<li><span>5F</span> <span>国美超市</span> </li>
+				<li><span>6F</span> <span>服饰鞋包</span> </li>
+				<li><span>7F</span> <span>家居家装</span> </li>
+				<li><span>8F</span> <span>汽车用品</span> </li>
+				<li><span>9F</span> <span>海外购</span> </li>
+				<li><span>10F</span> <span>生活服务</span> </li>
+				<li class="last up">Top</li>
+				<li class="last down">Bottom</li>
 			</ul>
 		</div>
 		<div class="stairs">
-			<div class="Louti1 wrapbox" data-title="手机通讯">
+			<div class="Louti1 wrapbox louti" data-title="手机通讯">
 				<div class="mt">
 					<div class="mtTop">
 						1F 手机通讯
@@ -1103,7 +1103,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="Louti2 wrapbox" data-title="电脑数码">
+			<div class="Louti2 wrapbox  louti" data-title="电脑数码">
 				<div class="mt">
 					<div class="mtTop">
 						2F 电脑数码
@@ -1437,11 +1437,12 @@
 						</p>
 					</div>
 				</div>
-			</div>
-			<div class="Lou_guang wrapbox"><a href="">
+				<div class="Lou_guang wrapbox"><a href="">
 				<img src="img/T1VcJQBT_v1RCvBVdK.jpg"/>
 			</a></div>
-			<div class="Louti3 wrapbox" data-title="家用电器">
+			</div>
+			
+			<div class="Louti3 wrapbox  louti" data-title="家用电器">
 				<div class="mt">
 					<div class="mtTop">
 						3F 家用电器
@@ -1776,7 +1777,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="Louti4 wrapbox" data-title="厨房卫浴">
+			<div class="Louti4 wrapbox  louti" data-title="厨房卫浴">
 				<div class="mt">
 					<div class="mtTop">
 						4F 厨房卫浴
@@ -2094,15 +2095,350 @@
 					</div>
 				</div>
 			</div>
-			<div class="Louti5 wrapbox" data-title="国美超市"></div>
-			<div class="Lou_guang wrapbox"><a href="">
+			<div class="Louti5 wrapbox  louti" data-title="国美超市">
+				<div class="mt">
+					<div class="mtTop">
+						5F 国美超市
+					</div>
+					<ul class="tab" hcolor="#719ef7" index="0">
+						<li style="background: #719EF7;"><a href="" style="color: #fff;">精选热门</a></li>
+						<li><a href="">时尚新品</a></li>
+						<li><a href="">畅享低价</a></li>
+						<li><a href="">二手优品</a></li>
+						<li><a href="">精选单品</a></li>
+					</ul>
+				</div>
+				<div class="mc">
+					<div class="mc_l" style="background: #719ef7;">
+						<a href=""  class="mc_l_img"><img src="img/T1tmYQBbDv1RCvBVdK.png" alt="" /></a>
+						<div class="KeyAll">
+							<div class="channel" style="background: #6294f6;">
+								<ul class="channel_inner">
+									<li>
+										<a href="">手机</a><span>/</span>
+										<a href="">充值</a><span>/</span>
+										<a href="">淘实惠</a><span>/</span>
+										<a href="">领券</a>
+									</li>
+								</ul>
+							</div>
+							<div class="keywords">
+								<ul>
+									<li><a href="">荣耀手机</a></li>
+									<li><a href="">国美手机</a></li>
+									<li><a href="">华为手机</a></li>
+									<li><a href="">热销推荐</a></li>
+									<li><a href="">以旧换新</a></li>
+								</ul>
+								<ul>
+									<li><a href="">潮3C</a></li>
+									<li><a href="">魅族</a></li>
+									<li><a href="">配件</a></li>
+									<li><a href="">存储卡</a></li>
+									<li><a href="">保护套</a></li>
+								</ul>
+								<ul>
+									<li><a href="">国美租租</a></li>
+									<li><a href="">小米手机</a></li>
+									<li><a href="">iPhone XS</a></li>
+									<li><a href="">二手优品</a></li>
+									<li><a href="">返利攻略</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="mc_main">
+						<div class="mc_main_content">
+							<div class="mc_c">
+								<ul>
+									<li><a href=""><img src="img/T1UZZQBbAv1RCvBVdK.jpg" alt="" /> </a></li>
+									<li><a href=""><img src="img/T1QRhbBmxv1RCvBVdK.jpg" alt="" /> </a></li>
+									<li><a href=""><img src="img/T1EJVgB4Zv1RCvBVdK.jpeg" alt="" /> </a></li>
+								</ul>
+								<ol class="nav">
+									<li><a href=""></a></li>
+									<li><a href=""></a></li>
+									<li><a href=""></a></li>
+								</ol>
+								<div class="slider_page">
+									<p class="slider_up">
+										<a class="slider_prev"></a>
+										<span class="prev"></span>
+									</p>
+									<p class="slider_down">
+										<a class="slider_next"></a>
+										<span class="next"></span>
+									</p>
+								</div>
+								<div class="brand_slider">
+									<ul>
+										<li><a href=""><img src="img/T1yobTB4_v1RCvBVdK.jpeg" alt="" /></a></li>
+										<li><a href=""><img src="img/T1_kbTB_dT1RCvBVdK.jpeg" alt="" /></a></li>
+										<li><a href=""><img src="img/T1DDJQB5LT1RCvBVdK.png" alt="" /></a></li>
+										<li><a href=""><img src="img/T1eVATBydv1RCvBVdK.jpeg" alt="" /></a></li>
+										<li><a href=""><img src="img/T1z5ZTBjEv1RCvBVdK.jpeg" alt="" /></a></li>
+										<li><a href=""><img src="img/T116YTBCLT1RCvBVdK.jpeg" alt="" /></a></li>
+									</ul>
+									<ul>
+									</ul>
+								</div>
+							</div>
+							<div class="mc_r">
+								<ul class="mc_r_inner">
+									<li><a href=""><img src="img/T1i7WgBsYv1RCvBVdK.jpg" alt="" /></a></li>
+									<li><a href=""><img src="img/T1q.KjB4hv1RCvBVdK.jpg" alt="" /></a></li>
+									<li><a href=""><img src="img/T1AAC_BmD_1RCvBVdK.jpg" alt="" /></a></li>
+									<li><a href=""><img src="img/T1EIVQBTKv1RCvBVdK.jpg" alt="" /></a></li>
+									<li><a href=""><img src="img/T15hZQBQDv1RCvBVdK.jpg" alt="" /></a></li>
+									<li><a href=""><img src="img/T1EGCjB5Lv1RCvBVdK.jpg" alt="" /></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="mc_main" style="display: none;">
+						<div class="mc_main_content">
+							<ul class="main_inner">
+								<li><a href="">
+									<img src="img/T1a___BCdv1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1V5_jBCZv1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1AtCjByx_1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1AaZgBgKT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1PgEbBXY_1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T15EKsBThT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1DRK_Bgxv1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1AaZgBgKT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1AaZgBgKT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1SbdbBgYT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="mc_main" style="display: none;">
+						<div class="mc_main_content">
+							<ul class="main_inner">
+								<li><a href="">
+									<img src="img/T15EKsBThT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1DRK_Bgxv1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1AaZgBgKT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1AaZgBgKT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1SbdbBgYT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1a___BCdv1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1V5_jBCZv1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1AtCjByx_1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1AaZgBgKT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1PgEbBXY_1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								
+							</ul>
+						</div>
+					</div>
+					<div class="mc_main" style="display: none;">
+						<div class="mc_main_content">
+							<ul class="main_inner">
+								<li><a href="">
+									<img src="img/T1a___BCdv1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1V5_jBCZv1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								
+								<li><a href="">
+									<img src="img/T1PgEbBXY_1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T15EKsBThT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1AtCjByx_1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1AaZgBgKT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1DRK_Bgxv1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1AaZgBgKT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1AaZgBgKT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1SbdbBgYT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="mc_main" style="display: none;">
+						<div class="mc_main_content">
+							<ul class="main_inner">
+								<li><a href="">
+									<img src="img/T1a___BCdv1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1V5_jBCZv1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1AaZgBgKT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1SbdbBgYT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1AtCjByx_1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1AaZgBgKT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1PgEbBXY_1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T15EKsBThT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1DRK_Bgxv1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								<li><a href="">
+									<img src="img/T1AaZgBgKT1RCvBVdK_130.jpg" alt="" />
+									<p class="p_name">荣耀Magic2 全网通 渐变黑</p>
+									<p class="p_price">￥4299.00</p>
+								</a></li>
+								
+							</ul>
+						</div>
+					</div>
+					<div class="slider_page">
+						<p class="slider_down">
+							<a class="slider_next"></a>
+							<span class="next"></span>
+						</p>
+					</div>
+				</div>
+				<div class="Lou_guang wrapbox"><a href="">
 				<img src="img/T13WCbBjdT1RCvBVdK.jpg"/>
 			</a></div>
-			<div class="Louti6 wrapbox" data-title="服饰鞋包"></div>
-			<div class="Louti7 wrapbox" data-title="家居家装"></div>
-			<div class="Louti8 wrapbox" data-title="汽车用品"></div>
-			<div class="Louti9 wrapbox" data-title="海外购"></div>
-			<div class="Louti10 wrapbox" data-title="生活服务"></div>
+			</div>
+			
+			<div class="Louti6 wrapbox  louti" data-title="服饰鞋包"></div>
+			<div class="Louti7 wrapbox  louti" data-title="家居家装"></div>
+			<div class="Louti8 wrapbox louti" data-title="汽车用品"></div>
+			<div class="Louti9 wrapbox louti" data-title="海外购"></div>
+			<div class="Louti10 wrapbox louti" data-title="生活服务"></div>
 		</div>
 		<!--热销榜-->
 		<div class="hot-wrap">
@@ -2234,7 +2570,7 @@
 			</div>
 		</div>
 		<!--侧边栏-->
-		<!--<div class="sidebar">
+		<div class="sidebar" style="z-index: 999;">
 			<ul class="side-top">
 				<li class="icon-user" >
 					<a href="#" ><i ></i></a>
@@ -2256,7 +2592,7 @@
 				<li><a href="#"></a></li>
 				<li><a href="#"></a></li>
 			</ul>
-		</div>-->
+		</div>
 	</body>
 </html>
 <script src="js/index.js"></script>

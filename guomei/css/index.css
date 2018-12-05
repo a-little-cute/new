@@ -488,7 +488,18 @@ i {
   margin-top: 5px;
   background-size: 13px 19px;
 }
-.topSearch button {
+.topSearch .butto {
+  width: 90px;
+  height: 30px;
+  border: 0;
+  float: right;
+  display: inline;
+  background: #dd00a7;
+  color: #fff;
+  font: 16px/30px 'microsoft yahei';
+  outline: none;
+}
+.topSearch .sear {
   width: 90px;
   height: 30px;
   border: 0;
@@ -498,8 +509,6 @@ i {
   background: #dd00a7;
   font: 16px/30px 'microsoft yahei';
   color: #fff;
-  letter-spacing: 2px;
-  text-indent: 0;
   outline: none;
 }
 .topSearch .search-bottom {
@@ -1215,30 +1224,46 @@ i {
   width: 66px;
   border: 1px solid;
   text-align: center;
+  z-index: 999;
+}
+#LoutiNav ul {
+  width: 66px;
+  overflow: hidden;
 }
 #LoutiNav ul li {
-  width: 66px;
-  height: 44px;
+  height: 43px;
   position: relative;
+  line-height: 5px;
+  border-top: none;
   list-style: none;
   text-align: center;
-  line-height: 30px;
+  line-height: 18px;
   font-size: 12px;
   cursor: pointer;
   border-bottom: 1px dotted #AAAAAA;
 }
-#LoutiNav ul li li.last {
+#LoutiNav ul li span:nth-child(1) {
+  width: 100%;
+  display: block;
+  height: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+#LoutiNav ul li span:nth-child(1) {
+  line-height: 24px;
+  height: 22px;
+}
+#LoutiNav ul li.red {
+  color: red;
+}
+#LoutiNav ul li.last {
   background: darkred;
   color: white;
   border-bottom: none;
-}
-#LoutiNav ul li li.last span {
-  line-height: 22px;
-  display: block;
+  line-height: 44px;
 }
 #LoutiNav li:hover {
-  background: darkred;
-  color: white;
+  color: red;
 }
 
 .Lou_guang {
@@ -1564,16 +1589,6 @@ i {
   width: 479px;
 }
 
-/*1F*/
-/*2F*/
-/*3F*/
-/*4F*/
-/*5F*/
-/*6F*/
-/*7F*/
-/*8F*/
-/*9F*/
-/*10F*/
 /*<!--热销榜-->*/
 /*<!--帮助-->*/
 #help {
@@ -1795,7 +1810,6 @@ i {
 }
 
 .sidebar li {
-  background: url(../img/ui.png) no-repeat center bottom;
   font-size: 12px;
   text-align: center;
 }

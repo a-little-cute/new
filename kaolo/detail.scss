@@ -1,0 +1,655 @@
+body {margin:0; padding:0; background: #FFF; font-size:12px;}
+article, aside, blockquote, body, button, code, dd, details, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, 
+hgroup, hr, input, legend, li, menu, nav, ol, p, pre,section,td,textarea, th, ul{margin: 0; padding: 0;}
+body, button, input, select, textarea{font: 12px/1.5 Helvetica Neue,Helvetica,Arial,Hiragino Sans GB,\5FAE\8F6F\96C5\9ED1,tahoma,simsun,\5b8b\4f53;}
+li{list-style-type:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6 { margin:0; padding:0;font-size:12px; font-weight:normal;}
+html,body{width: 100%;}
+a:link {color: #1f3a87; text-decoration:none;}
+//a:visited {color: #83006f;text-decoration:none;}
+a:hover {color: #bc2931; text-decoration:underline;}
+a:active {color: #bc2931;}
+ .left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.middlebg{
+    width: 100%;
+    height: auto;
+    border-top: 1px solid #CCCCCC;
+    .middle{
+        width: 1090px;
+        height: auto;
+        margin: 0 auto;
+        overflow: hidden;
+        border-bottom: 1px solid #dddddd;
+        .midtil{
+            width: 100%;
+            height: 55px;
+            border-bottom: 1px solid #CCCCCC;
+            overflow: hidden;
+            >div{
+                margin-top: 22px;
+            }
+            div{
+                >div{
+                    display: inline-block;
+                    width: auto;
+                    height: 18px;
+                    border: 1px solid #CCCCCC;
+                    padding: 0 20px 0 8px;
+                    position: relative;
+                    >span{
+                        width: 6px;
+                        height: 6px;
+                        position: absolute;
+                        border-bottom: 2px solid #CCCCCC;
+                        border-right: 2px solid #CCCCCC;
+                        right: 10px;
+                        top: 3px;
+                        transform-origin: 70%  70%;
+                        transform: rotateZ(45deg);
+                        transition: .5s;
+                    }
+                }
+                >div:hover span{
+                    transform: rotateZ(225deg);
+                }
+                >p{
+                    float: right;
+                    a:first-child{
+                        color: #666666;
+                        margin-right: 10px;
+                    }
+                    a:last-child{
+                        color: #333333;
+                    }
+                }
+            }
+        }
+    .pInfowarp{
+        width: 1090px;
+        height: 587px;
+        margin: 0 auto;
+        position: relative;
+        padding-top: 43px;
+        .Magnifier{
+            width: 400px;
+            float: left;
+            .middleImg{
+                width: 400px;
+                height: 400px;
+                border: 1px solid #CCCCCC;
+                position: relative;
+                >img{
+                    width: 100%;
+                    height: 100%;
+                }
+                .plate{
+                    width: 200px;
+                    height: 200px;
+                    background: #000000;
+                    opacity: .3;
+                    position: absolute;
+                    top: 0;left: 0;
+                    cursor: crosshair;
+                    display: none;
+                }
+            }
+            .smallImgWarp{
+                height: 70px;
+                width: 330px;
+                overflow: hidden;
+                position: relative;
+                padding: 0 35px;
+                margin-top: 19px;
+                
+                .imgList{
+                    height: 70px;
+                    width: 100%;
+                    margin-left: 47px;
+                    position: absolute;
+                    left: 0;
+                    li{
+                        width: 64px;
+                        height: 64px;
+                        float: left;
+                        margin-top: 2px;
+                        margin-right: 14px;
+                        border: 1px solid #CCCCCC;
+                        cursor: pointer;
+                        
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    li:hover{
+                        border: 3px solid red;
+                        margin: 0px 12px 0 -2px;
+                    }
+                }
+                >span{
+                    position: absolute;
+                    display: block;
+                    width: 33px;
+                    height: 68px;
+                    border: 1px solid #EEEEEE ;
+                    top: 0px;left: 0;
+                    background: white url(../img/icon1.png) no-repeat;
+                    background-position: -770px -145px;
+                    cursor: pointer;
+                }
+                >span:nth-of-type(2){
+                    left: inherit;
+                    right: 0;
+                    background-position: -794px -145px;
+                }
+            }
+        }
+        .bigImgWarp{
+            width: 400px;
+            height: 400px;
+            border: 1px solid #CCCCCC;
+            overflow: hidden;
+            position: absolute;
+            left: 430px;
+            top: 43px;
+            z-index: 10;
+            display: none;
+            .bigImg{
+                position: absolute;
+            }
+        }
+        .pInfomation{
+            float: left;
+            margin-left: 30px;
+            width: 658px;
+            min-height: 500px;
+            >div{
+                vertical-align: middle;
+                color: #999;
+                font-size: 13px;
+                margin-bottom: 10px;
+                >a{
+                    color: #999999;
+                     vertical-align: middle;
+                }
+                >span{
+                     vertical-align: middle;
+                }
+                >img{
+                    vertical-align: middle;
+                    margin-right: 2px;
+                }
+            }
+            >h2{
+                font-size: 18px;
+                color: #333333;
+                font-weight: 600;
+                line-height: 26px;
+            }
+            >h3{
+                margin-top: 5px;
+                font-size: 13px;
+                line-height: 20px;
+                color: #333333;
+            }
+            .priceWarp{
+                width: 658px;
+                height: 100px;
+                background: #f9f9f9;
+                margin-top: 10px;
+                border-top: 1px dashed #DDDDDD;
+                border-bottom: 1px dashed #DDDDDD;
+                .price{
+                    font-size: 12px;
+                    line-height: 26px;
+                    margin-top: 12px;
+                    vertical-align: middle;
+                    >span{
+                        margin-left: 10px;
+                    }
+                    >font{
+                        margin-left: 50px;
+                        color: #e31436;
+                        font-size: 26px;
+                        line-height: 1px;
+                        font-weight: bolder;
+                        vertical-align: middle;
+                    }
+                    >span:nth-of-type(2){
+                       width: auto;
+                       height: 18px;
+                       padding: 0 5px;
+                       display: inline-block;
+                       line-height: 18px;
+                       background: #f68587;
+                       color: white;
+                       border-radius: 2px; 
+                    }
+                }
+                .discounts{
+                    margin: 9px 0 9px 86px;
+                    font-size: 12px;
+                    color: #333333;
+                    >img{
+                        height: 14px;
+                    }
+                    >a{
+                        color: #52b8f1;
+                        margin-left: 20px;
+                        text-decoration: underline;
+                    }
+                }
+                .coupon{
+                    font-size: 12px;
+                    margin-left: 86px;
+                    color: #333333;
+                    >a{
+                        color: #52b8f1;
+                        margin-left: 5px;
+                        text-decoration: underline;
+                    }
+                    span:nth-of-type(2){
+                        float: right;
+                        margin-right: 5px;
+                        i{
+                            color: #e11b36;
+                            font-style: normal;
+                        }
+                    }
+                }
+            }
+            .addr{
+                padding-left: 86px;
+                position: relative;
+                color: #333333;
+                >span:first-child{
+                    position: absolute;
+                    top: 0;left: 0;
+                    color: #666666;
+                }
+                >div{
+                    display: inline-block;
+                    margin-right: 20px;
+                    height: 18px;
+                    width: auto;
+                    padding: 0 17px 0 5px;
+                    border: 1px solid #CCCCCC;
+                    position: relative;
+                    cursor: pointer;
+                    >span{
+                        position: absolute;
+                        top: 7px;right: 6px;
+                        display: block;
+                        border-top:4px solid #666666;
+                        border-left:4px solid transparent ;
+                        border-right:4px solid transparent;
+                    }
+                    .location{
+                        position: absolute;
+                        left: 0;
+                        width: 440px;
+                        height: auto;
+                        border: 1px solid #CCCCCC;
+                        background: white;
+                        z-index: 9;
+                        overflow: hidden;
+                        cursor: default;
+                        display: none;
+                        .provinceWarp{
+                            width: 420px;
+                            height: 30px;
+                            margin-top: 10px;
+                            margin-left: 10px;
+                            border-bottom: 1px solid #CCCCCC;
+                            >li{
+                                width: 58px;
+                                height: 29px;
+                                border: 1px solid #CCCCCC;
+                                float: left; 
+                                padding: 0 5px;
+                                margin-right: -1px;
+                                text-align: center;
+                                line-height: 30px;
+                                font-size: 12px;
+                                background: #FFFFFF;
+                                cursor: pointer;
+                            }
+                            .setstyle{
+                                font-weight: bold;
+                                border-top: 2px solid #E31436;
+                                border-bottom: none;
+                                line-height: 28px;
+                            }
+                        }
+                        .content{
+                            width: 400px;
+                            padding: 0 20px;
+                            margin: 10px 0;
+                            ul{
+                                overflow: hidden;
+                                height: 100%;
+                                display: none;
+                                li{
+                                    min-width: 55px;
+                                    height: 30px;
+                                    font-size: 12px;
+                                    font-weight: normal;
+                                    line-height: 28px;
+                                    float: left;
+                                    >a{
+                                        cursor: pointer;
+                                        text-align: center;
+                                        display: inline-block;
+                                        padding: 0 5px;
+                                        height: 26px;
+                                        color: #333333;
+                                        border: 1px solid transparent;
+                                        text-decoration: none;
+                                    }
+                                    a:hover{
+                                        color: #E31436;
+                                        border-color: #E31436;
+                                    }
+                                    
+                                }
+                            }
+                            ul:first-of-type{
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                >span{
+                    margin-right: 10px;
+                }
+            }
+            .service{
+                padding-left: 86px;
+                position: relative;
+                color: #333333;
+                >span:first-child{
+                    position: absolute;
+                    top: 0;left: 0;
+                    color: #666666;
+                }
+                p:nth-of-type(1){
+                    font-size: 12px;
+                    >a{
+                        color: #e31436;
+                        margin: 0 10px;
+                    }
+                }
+                .serviceImg{
+                    margin-top: 10px;
+                    margin-left: 10px;
+                    position: relative;
+                    >img{
+                        width: 28px;
+                        height: 28px;
+                        margin-right: 72px;
+                    }
+                    >span{
+                        width: 60px;
+                        border-top: 1px solid #CCCCCC;
+                        position: absolute;
+                        top: 13px;
+                    }
+                    >span:nth-of-type(1){
+                        left: 35px;
+                        border-color: #333333;
+                    }
+                    >span:nth-of-type(2){
+                        left: 137px;
+                    }
+                }
+                >div:nth-of-type(2){
+                    margin-top: 10px;
+                    >span:not(:nth-of-type(2)){
+                        margin-right: 30px;
+                    }
+                    >span:nth-of-type(2){
+                        max-width: 75px;
+                        display: inline-block;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        vertical-align: bottom;
+                    }
+                    >span{
+                        font-size: 12px;
+                    }
+                }
+                div:last-of-type{
+                    font-size: 12px;
+                    margin-top: 10px;
+                    >font{
+                        color: #333;
+                        font-weight: bold;
+                    }
+                }
+            }
+            .pColor{
+                padding-left: 86px;
+                position: relative;
+                color: #333333;
+                overflow: hidden;
+                margin-top: 5px;
+                >span:first-child{
+                    position: absolute;
+                    top: 0;left: 0;
+                    color: #666666;
+                }
+                >div{
+                    float: left;
+                    >img{
+                        margin-right: 10px;
+                        border: 1px solid #CCCCCC;
+                    }
+                    >span{
+                        display: block;
+                    }
+                    >span:first-of-type{
+                        margin-top: 16px;
+                    }
+                }
+            }
+            .psize{
+                padding-left: 86px;
+                margin-top: 5px;
+                position: relative;
+                color: #333333;
+                overflow: hidden;
+                >span:first-child{
+                    position: absolute;
+                    top: 0;left: 0;
+                    color: #666666;
+                }
+                >div{
+                    width: 58px;
+                    height: 24px;
+                    margin-right: 5px;
+                    float: left;
+                    span:nth-of-type(n+1){
+                        display: block;
+                        line-height: 22px;
+                        text-align: center;
+                        cursor: pointer;
+                        width: 54px;
+                        height: 20px;
+                        border: 1px solid #CCCCCC;
+                        margin: 1px;
+                    }
+                    span:hover{
+                        border: 2px solid #E31436;
+                        margin: 0;
+                    }
+                }
+            }
+            .pCount{
+                padding-left: 86px;
+                margin-top: 5px;
+                position: relative;
+                color: #333333;
+                overflow: hidden;
+                >span:first-child{
+                    position: absolute;
+                    top: 0;left: 0;
+                    color: #666666;
+                }
+                >div{
+                    >a{
+                        display: inline-block;
+                        width: 22px;
+                        height: 22px;
+                        line-height: 22px;
+                        border: 1px solid #CCCCCC;
+                        text-decoration: none;
+                        text-align: center;
+                    }
+                    >a:first-of-type{
+                        border-right: none;
+                    }
+                    >a:last-of-type{
+                        border-left: none;
+                    }
+                    >input{
+                        width: 28px;
+                        height: 22px;
+                        outline: none;
+                        text-align: center;
+                        font-size: 14px;
+                        color: #333333;
+                        border: 1px solid #CCCCCC;
+                        padding: 0 5px;
+                        vertical-align: bottom;
+                    }
+                    >span{
+                        margin-left: 10px;
+                        font-size: 12px;
+                    }
+                }
+            }
+            .explain{
+                padding-left: 86px;
+                margin-top: 5px;
+                position: relative;
+                color: #333333;
+                overflow: hidden;
+                >span:first-child{
+                    position: absolute;
+                    top: 0;left: 0;
+                    color: #666666;
+                }
+                >div{
+                    >span{
+                        font-size: 12px;
+                        color: #666;
+                        padding: 0 5px 0 16px;
+                        position: relative;
+                        margin-right: 5px;
+                        >i{
+                            display: inline-block;
+                            width: 12px;
+                            height: 12px;
+                            background: url(../img/support.ede6c07.png) no-repeat;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 0;left: 0;
+                        }
+                    }
+                    >span:first-of-type:hover{
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .buy{
+                margin-top: 15px;
+                margin-left: -10px;
+                div>a{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                    text-align: center;
+                    font-weight: bold;
+                }
+                >div:first-of-type{
+                    display: inline-block;
+                    width: 156px;
+                    height: 56px;
+                    border: 2px solid #d41c44;
+                    background: #ffeced;
+                    line-height: 56px;
+                    font-size: 18px;
+                    margin-right: 20px;
+                    >a{
+                        color: #d31b44;
+                    }
+                }
+                >div:nth-of-type(2){
+                    display: inline-block;
+                    width: 160px;
+                    height: 60px;
+                    background: #e31436;
+                    line-height: 60px;
+                    font-size: 18px;
+                    margin-right: 30px;
+                    >a{
+                        color: #FFFFFF;
+                    }
+                }
+                >a{
+                    display: inline-block;
+                    padding: 0 5px 0 20px;
+                    position: relative;
+                    color: #6f6f6f;
+                    font-size: 14px;
+                    >i{
+                        position: absolute;
+                        top: 1px;left: 0;
+                        display: block;
+                        width: 14px;
+                        height: 16px;
+                        background: url(../img/xin.png) no-repeat;
+                        background-size: cover;
+                    }
+                }
+                .evaluate{
+                    margin-top: 10px;
+                    vertical-align: middle;
+                    >li{
+                        float: left;
+                        margin-right: 10px;
+                        font-size: 16px;
+                        vertical-align: middle;
+                    }
+                    >span{
+                        line-height: 26px;
+                        i{
+                            cursor: pointer;
+                            color: #333333;
+                            font-style: normal;
+                        }
+                        i:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    }
+}
+
+
+
+
+
+
+

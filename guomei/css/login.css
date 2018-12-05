@@ -152,6 +152,10 @@ header {
     display: inline-block;
     background: url(../img/login-bg-common.png) 0 0;
     margin: 5px 0 0 5px; }
+  .login .loginBottom .active {
+    background-position-y: -25px; }
+.login .active1 {
+  height: 55px; }
 
 #s1 {
   width: 290px;
