@@ -118,7 +118,8 @@ i {
 .main-info {
   width: 1200px;
   margin: 0 auto;
-  color: #5e5e5e; }
+  color: #5e5e5e;
+  overflow: hidden; }
   .main-info .main-left {
     width: 450px; }
     .main-info .main-left .prd {

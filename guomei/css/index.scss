@@ -77,8 +77,10 @@ i{
     
     .top li{
         float: left;
-        line-height: 31px;
+        height: 29px;
+        line-height: 29px;
         margin: 0 10px;
+        border-top: 1px solid #f8f8f8;
     }
     .top ul li>a{
         color: #5e5e5e;
@@ -89,7 +91,7 @@ i{
     
     #dropdown{
         border: 1px solid #e6e6e6;
-//      border-top: none;
+        border-top: none;
         z-index: 30;
         position: absolute;
         font-size: 12px;    
@@ -960,11 +962,14 @@ i{
 }
         /*<!--猜你喜欢-->*/
 .you_may_like{
+    position: relative;
     @include pub(1200px,326px);
     margin: 0 auto;
     background: #fff;
     .like-top{
         .change-btn{
+                position: relative;
+            
             float: right;
             width: 54px;
             a{
@@ -973,11 +978,12 @@ i{
                 height: 23px;
                 margin-top: 30px;
                 float: left;
-                margin-left: 3px;
                 background:url(../img/ui2.png);
                 
             }
             .change-btn-pre{
+                left: 0;
+                outline: none;
                 background-position: -126px -104px;
                 &:hover{
                      background-position: -126px -288px;
@@ -985,6 +991,8 @@ i{
                 }
             }
             .change-btn-next{
+                right: 0;
+                outline: none;
                 background-position:-126px -182px;
                 &:hover{
                      background-position: -126px -156px;
@@ -1192,7 +1200,6 @@ i{
     border: 1px solid ;
     text-align: center;
     z-index: 999;
-//  display: none;
     ul{ 
         width: 66px;
         overflow: hidden;
@@ -1358,6 +1365,26 @@ i{
             }
         }
     }
+    /*包裹自定义分页器的div的位置等CSS样式*/
+            .swiper-pagination-custom {
+                bottom: 10px;
+                left: 0;
+                width: 100%;
+            }
+            /*自定义分页器的样式，这个你自己想要什么样子自己写*/
+            .swiper-pagination-customs {
+                width: 30px;
+                height: 4px;
+                display: inline-block;
+                background: #000;
+                opacity: .3;
+                margin: 0 5px;
+            }
+            /*自定义分页器激活时的样式表现*/
+            .swiper-pagination-customs-active {
+                opacity: 1;
+                background-color: #F78E00;
+            }
     .nav{
         position: absolute;
         bottom: 121px;
@@ -1789,24 +1816,122 @@ i{
 .sidebar{
     @include pub(35px,100%);
     position: fixed;
-    background: #5c5c5c;
+    background: #4e4e4e;
     top: 0;
     right: 0;
-}
-.sidebar li{
-//  background: url(../img/ui.png) no-repeat center bottom;
-    font-size: 12px;
-    text-align: center;
-}
-.sidebar li a{
-    display: block;
-    height: 38px;
-}
-.sidebar .side-top{
-    position: absolute;
-    display: block;
-    top: 71px;
-    text-align: center;
+    li:hover{
+        background: rgb(52,52,52);
+    }
+    .side-top{
+        position: absolute;
+        display: block;
+        top: 71px;
+        text-align: center;
+        li{
+            font-size: 12px;
+            text-align: center;
+            a{
+                height: 38px;
+                display: block;
+            }
+        }
+        .icon-user{
+            i{
+                margin-left: 6px;
+                margin-top: 10px;
+                display: block;
+                background-position: -18px -1025px;
+                @include pub(28px,18px);
+                position: absolute;
+                text-align: center;
+            }
+            &:hover{
+                background: rgb(52,52,52);
+            }
+        }
+        li:nth-child(2){
+            height: 100px;
+            padding: 10px 0;
+            a{
+                color: #fff;
+                height: 100px;
+            }
+            i{
+                margin-left: 5px;
+                margin-top: 15px;
+                display: block;
+                background-position: 0px -1046px;
+                @include pub(31px,20px);
+                position: absolute;
+                text-align: center;
+            }
+            span{
+                line-height: 18px;
+                margin-top: 30px;
+            }
+            
+        }
+        li:nth-child(3),li:nth-child(4){
+            i{
+                margin-left: 6px;
+                margin-top: 10px;
+                display: block;
+                background-position: 2px -1120px;
+                @include pub(26px,26px);
+                position: absolute;
+                text-align: center;
+            }
+        }
+        li:nth-child(4){
+            i{
+                background-position: -68px -1023px;
+            }
+        }
+    }
+    .side-bottom{
+        position: absolute;
+        display: block;
+        text-align: center;
+        height: auto;
+        width: 35px;
+        bottom: 35px;
+        li{
+            height: 36px;
+            a{
+                display: block;
+                height: 36px;
+            }
+            i{
+                margin-left: 6px;
+                margin-top: 10px;
+                display: block;
+                background-position: 2px -1120px;
+                @include pub(20px,20px);
+                position: absolute;
+                text-align: center;
+            }
+        }
+        li:nth-child(1){
+            i{
+                background-position: -212px -473px;;
+            }
+        }
+        li:nth-child(2){
+            i{
+                background-position: -212px -493px;
+            }
+        }
+        li:nth-child(3){
+            i{
+                background-position: -212px -513px;
+            }
+        }
+        li:nth-child(4){
+            i{
+                background-position: -212px -533px;
+            }
+        }
+    }
 }
 .side-top li span{
     color: #fff;
@@ -1814,18 +1939,4 @@ i{
     margin: 12px;
     width: 12px;
 }
-.icon-user i{
-    @include pub(28px,18px);
-    position: absolute;
-    text-align: center;
-}
-.side-top .icon-user{
-    background-position: -18px -1024px;
-}
-.icon-user+a{
-}
-.side-bottom{
-    position: absolute;
-    bottom: 10px;
-}
-        
+

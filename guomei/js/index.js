@@ -3,6 +3,64 @@ $(".close").click(function(){
 	$(".advert").css("display","none");
 })
 //轮播图
+function lunBo(){
+	this.init();
+}
+lunBo.prototype = {
+	init : function(){
+		this.meth();
+	},
+	meth :function(){
+		$.ajax({
+			type:"get",
+			url:"json/productlist.json",
+			async:true,
+			success : function(mes){
+				var str = "";
+				var json = mes.lunbo;
+				for(var val of json){
+					str += `<li style="z-index:${val.index}" color="${val.color}">
+								<a href="javascript:;"></a>
+            					<img src="img/${val.img}" alt=""/>
+            				</li>`
+				}
+				$("#lunbo").html(str);
+			}
+		})
+		this.move();
+	},
+	move : function(){
+		var timer = null,
+			index = 0,
+			$main = $(".main")
+			$ulist = $("#lunbo ul>li").delegate(),
+			$olist = $(".main ol>li");
+		$olist.eq(index).css({"opacity":1,"background-color":"#f5004b"})
+		timer = setInterval( autoPlay , 3000 );
+		function autoPlay(){
+			index++;
+			if(  index == $ulist.size() ){
+				index = 0;
+			}
+			var bgcolor = $olist.eq(index).attr("color");
+			$main.css("background",bgcolor);		
+			$olist.eq(index).css({"opacity":1,"background-color":"#f5004b"})
+							.addClass("current")
+							.siblings()
+							.css({"opacity":.3,"background-color":"#000"});
+			$ulist.eq(index).fadeIn(1000).siblings().fadeOut(1000);
+		}
+		$olist.on("mouseenter",function(){
+			clearInterval( timer );
+			index = $(this).index()-1;
+			autoPlay();
+		}).on("mouseleave",function(){
+			timer = setInterval( autoPlay , 3000 );
+		})
+	
+	}
+}
+//new lunBo();
 function LunBo(){
 	var timer = null,
 		index = 0,
@@ -25,16 +83,16 @@ function LunBo(){
 						.css({"opacity":.3,"background-color":"#000"});
 		$ulist.eq(index).fadeIn(1000).siblings().fadeOut(1000);
 	}
-	$olist.mouseenter(function(){
+	$olist.on("mouseenter",function(){
 		clearInterval( timer );
 		index = $(this).index()-1;
 		autoPlay();
-	}).mouseleave(function(){
+	}).on("mouseleave",function(){
 		timer = setInterval( autoPlay , 3000 );
 	})
 	
 }
- LunBo();
+   LunBo();
 //我的特权
 function Vip(){ 
 	var i=1;
@@ -99,15 +157,73 @@ function all(){
 	
 }
 all();
-$.extend({
-	like : function(){
-		$(".change-btn-next").click(function(){
-			$(".like-bottom").css("left","-1200px");
+
+//淘实惠 数据注入
+function Insert(obj,jon){
+	this.init(obj,jon);
+}
+Insert.prototype = {
+	init : function(obj,jon){
+		this.meth(obj,jon);
+	},
+	meth :function(obj,jon){
+		$.ajax({
+			type:"get",
+			url:"json/productlist.json",
+			async:true,
+			success : function(mes){
+				var str = "";
+				var json = mes[jon];
+				var i = 0
+				for(var val of json){
+					str = `<img src="img/${val.img}" alt="" />`
+					obj.eq(i).html(str);
+					i++
+				}
+			}
 		})
 	}
-})
+}
+new Insert($(".tao a"),"tao");
+new Insert($(".quan a"),"quan");
+new Insert($(".finance a"),"finance");
+
 //猜你喜欢
-$.like();
+function Like(obj,jon){
+	this.init(obj,jon);
+}
+Like.prototype = {
+	init : function(obj,jon){
+		this.meth(obj,jon);
+	},
+	meth :function(obj,jon){
+		$.ajax({
+			type:"get",
+			url:"json/productlist.json",
+			async:true,
+			success : function(mes){
+				var str = "";
+				var json = mes[jon];
+				for(var val of json){
+					str += `<li>
+								<a href="main.html?jso=${jon}&id=${val.id}">
+									<img src="img/${val.img}" />
+									<p>${val.info}</p>
+									<span>${val.price}</span>
+								</a>
+							</li>`
+				}
+				obj.html(str);
+			}
+		})
+	}
+}
+new Like($(".like1"),"like1");
+new Like($(".like2"),"like2");
+new Like($(".like3"),"like3");
+
+
+
 $.fn.extend({
 	fnMouseenter : function(){
 		this.on("mouseenter","li",function(){
@@ -149,7 +265,8 @@ $(".Louti1 .mc>.slider_page .slider_down").fnClick();
 $(".Louti2 .mc>.slider_page .slider_down").fnClick();
 $(".Louti3 .mc>.slider_page .slider_down").fnClick();
 $(".Louti4 .mc>.slider_page .slider_down").fnClick();
-
+stairs();
+function stairs(obj){
 	var $list = $("#LoutiNav li:not(.last)"),//楼层号
 		$floor = $(".louti"),
 		flag = true;//假设值为true时  滚动条可以操作
@@ -183,8 +300,16 @@ $(".Louti4 .mc>.slider_page .slider_down").fnClick();
 			flag = true;
 		});
 	})
+	$("#go-top a").click(function(){
+		$("html,body").animate({"scrollTop":0},1000);
+	})
 	//操作滚动条
 	$(window).scroll( function(){
+		if( $(document).scrollTop()>10 ){
+			$("#go-top a").show();
+		}else{
+			$("#go-top a").hide();
+		}
 		if( $(document).scrollTop()>1650 ){
 			$("#LoutiNav").show();
 		}else{
@@ -192,15 +317,11 @@ $(".Louti4 .mc>.slider_page .slider_down").fnClick();
 		}
 		if( flag ){
 			var sTop = $(document).scrollTop();
-			//得到满足某个条件的楼层
-			//条件 绝对值(页面滚走的距离-某个楼层的top值) < 楼层高度的一半
 			var $f = $floor.filter( function(){
-				//返回满足某个条件的元素
 				return Math.abs( sTop - $(this).offset().top ) < $(this).outerHeight()/2;
 			} )
 			var index = $f.index();//获取满足某个条件的楼层的下标
 			if( index != -1 ){
-				//根据下标找到楼层号并高亮显示
 				$list.eq(index).addClass("red")
 			   				   .siblings()
 			   				   .removeClass("red");
@@ -210,3 +331,35 @@ $(".Louti4 .mc>.slider_page .slider_down").fnClick();
 			}
 		}
 	} )
+}
+new Swiper ('.like-bottom', {
+    // 如果需要前进后退按钮
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  })      
+new Swiper ('.banner_1', {
+    loop: true, // 循环模式选项
+    autoplay: {
+    	disableOnInteraction: false,
+  	},
+  	effect : 'fade',
+     pagination: {
+      el: '.swiper-pagination',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+	
+  })      
+
+
+new Swiper ('.brand_slider', {
+    // 如果需要前进后退按钮
+    loop: true, // 循环模式选项
+    autoplay: {
+    	disableOnInteraction: false,
+  	}
+  })   

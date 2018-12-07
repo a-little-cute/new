@@ -189,4 +189,9 @@ TabToggle.prototype = {
 
 new TabToggle(".provinceWarp",".content");
 
-
+$(".advert").load("html/public.html #advert",function(){
+		$(".close").click(function(){
+			$(".advert").css("display","none");
+		})
+});
+$(".foot-wrap").load("html/public.html .foot");

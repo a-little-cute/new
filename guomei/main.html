@@ -26,13 +26,8 @@
 		}
 	</style>
 	<body>
-		<!--顶部广告-->
-		<div class="advert">
-			<div class="wrapbox">
-				<a href="#"><img src="img/T1kCZQBjxv1RCvBVdK.jpg"/></a>
-				<a href="#" class="close"><i></i></a>
-			</div>
-		</div>
+		
+		<div class="advert"></div>
 		<!--top登陆导航栏-->
 		<div class="top-wrap">
 			<div class="wrapbox top">
@@ -125,7 +120,7 @@
 		<div class="search-wrap">
 			<div class="wrapbox search">
 				<div class="logo">
-					<a href=""></a>
+					<a href="index.html"></a>
 				</div>
 				<div class="topSearch">
 					
@@ -251,12 +246,12 @@
 				</div>
 			</div>
 			<div class="main-right right">
-				<h1>康佳（KONKA） B55U 55英寸4K31核 金属超薄HDR人工智能平板液晶电视</h1>
+				<h1></h1>
 				<h4>【康佳品牌盛宴】【全国联保】 •8.8mm超窄边框 ！ •人工智能语音！<a href="">【彩电家年华】</a><a href="">【  精致产品，美妙生活，尽在康佳电视专场！】 </a></h4>
 				<div class="sp-price">
 					<div class="price-inner">
 						<span>国 美 价</span>
-						<span><em>￥</em>2199.00</span>
+						<span class="pri"></span>
 						<a href="javascript:;">降价通知</a>
 						<div class="right">
 							<div class="line">|</div>
@@ -267,21 +262,7 @@
 						</div>
 					</div>
 				</div>
-				<!--<div class="properties_min">
-					<div class="properties-1">
-						<div>
-							<p>特色</p>
-						</div>
-						<div>
-							<p>送至</p>
-						</div>
-						<div></div>
-						<div>
-							<p>服务</p>
-						</div>
-					</div>
-					<div class="properties-2"></div>
-				</div>-->
+				
 				<div class="addr">
 					<span>运费</span>
 					<span>南京</span>
@@ -352,7 +333,7 @@
 				</div>
 				<div class="buy">
 					<div><a href="#">立即购买</a></div>
-					<div><a href="#">加入购物车</a></div>
+					<div class="shopinfo"><a href="#">加入购物车</a></div>
 					<a href="#"><i></i>收藏</a>
 					<ul class="evaluate">
 						<li>☆</li>
@@ -367,50 +348,107 @@
 			
 			
 		</div>
-		
-		<!--<div id="gomo-bar-border">
-			<ul style="display: block;top: 169px;">
-				<li class="gomo-btn-member">
-					<b></b>
-					<i></i>
-					<a href="">国美会员</a>
+		<div class="foot-wrap">
+			
+		</div>
+		<!--侧边栏-->
+		<div class="sidebar" style="z-index: 999;">
+			<ul class="side-top">
+				<li class="icon-user" >
+					<a href="#"><i></i></a>
 				</li>
-				<li class="gomo-btn-cart">
-					<b></b>
-					<i class="caricon"></i>
-					<b>
+				<li class="sp">
+					<a href="#" >
+						<i></i>
 						<s>0</s>
-						<span class="point"></span>
-					</b>
-					<span class="text">购物车</span>
+						<span>购物车</span>
+					</a>
 				</li>
-				<li class="gomo-btn-coupon">
-					<b></b>
-					<i></i>
-				</li>
-				<li class="gomo-btn-favorites">
-					<b></b>
-					<i class="favorites-icon"></i>
-					<a href="">我的收藏</a>
-				</li>
+				<li><a href="#"><i></i></a></li>
+				<li><a href="#"><i></i></a></li>
 			</ul>
-		</div>-->
-			<!--<div id="gome-bar-box">
-				<div id="gomo-bar-member" class="gomo-bar-wrap">
-					
-				</div>
-				<div id="gomo-bar-cart" class="gomo-bar-wrap">
-					
-				</div>
-				<div id="gomo-bar-coupon" class="gomo-bar-wrap">
-					
-				</div>
-				<div id="gomo-bar-favorites" class="gomo-bar-wrap">
-					
-				</div>
-			</div>-->
+			<ul class="side-bottom">
+				<li><a href="#"><i></i></a></li>
+				<li><a href="#"><i></i></a></li>
+				<li><a href="#"><i></i></a></li>
+				<li id="go-top" ><a style="display: none;" href="#"><i></i></a></li>
+			</ul>
+		</div>
+		
+			
 	</body>
 </html>
 <script src="js/jquery-1.11.1.js"></script>
-<script src="js/index.js"></script>
 <script src="js/main.js"></script>
+<script>
+	
+	var str = location.href;
+	var a = str.split("=")[1];
+	var jso = a.split("&")[0];
+	var pid = str.split("=")[2];
+	console.log(pid)
+	function Like(obj,jon){
+		this.init(obj,jon);
+	}
+	Like.prototype = {
+		init : function(obj,jon){
+			this.meth(obj,jon);
+		},
+		meth :function(obj,jon){
+			$.ajax({
+				type:"get",
+				url:"json/productlist.json",
+				async:true,
+				success : function(mes){
+					var str = "";
+					var json = mes[jon][pid-1];
+					console.log(json[pid-1]);
+					str += `${json.info}`
+					obj.html(str);
+					console.log(str)
+				}
+			})
+		}
+	}
+	new Like($(".main-right h1"),jso);
+	
+	
+	localStorage.name = "哈哈哈";
+	$(".shoplist").on("click",function(){
+		
+		var src = $(this).data("src");
+		//调用抛物线方法
+		$.fnInit(startObj,endObj).fnMove(src);
+		
+		var json = {};
+		var flag = true;
+		var arr = [];
+		json = {
+			"id":$(this).data("pid"),
+			"name":$(this).data("pname"),
+			"src":$(this).data("src"),
+			"price":$(this).data("price"),
+			"count":1
+		}
+		
+		//获取cookie中的数据 长度如果不为0  说明返回的是一个数组 也就是原cookie数据
+		var brr = getCookie("shoplist");
+		if(brr.length!=0){
+			arr=brr;
+			for( var i = 0 ; i<arr.length ; i++ ){
+				if(json.id==arr[i].id){
+					arr[i].count++;
+					flag = false;
+					break;
+				}
+			}
+		}
+		
+		if(flag){
+			arr.push(json);
+		}
+		
+		setCookie("shoplist",JSON.stringify(arr));
+		console.log(document.cookie)
+	})
+</script>

@@ -87,8 +87,10 @@ i {
 
 .top li {
   float: left;
-  line-height: 31px;
+  height: 29px;
+  line-height: 29px;
   margin: 0 10px;
+  border-top: 1px solid #f8f8f8;
 }
 
 .top ul li > a {
@@ -101,6 +103,7 @@ i {
 
 #dropdown {
   border: 1px solid #e6e6e6;
+  border-top: none;
   z-index: 30;
   position: absolute;
   font-size: 12px;
@@ -1007,12 +1010,14 @@ i {
 
 /*<!--猜你喜欢-->*/
 .you_may_like {
+  position: relative;
   width: 1200px;
   height: 326px;
   margin: 0 auto;
   background: #fff;
 }
 .you_may_like .like-top .change-btn {
+  position: relative;
   float: right;
   width: 54px;
 }
@@ -1022,16 +1027,19 @@ i {
   height: 23px;
   margin-top: 30px;
   float: left;
-  margin-left: 3px;
   background: url(../img/ui2.png);
 }
 .you_may_like .like-top .change-btn .change-btn-pre {
+  left: 0;
+  outline: none;
   background-position: -126px -104px;
 }
 .you_may_like .like-top .change-btn .change-btn-pre:hover {
   background-position: -126px -288px;
 }
 .you_may_like .like-top .change-btn .change-btn-next {
+  right: 0;
+  outline: none;
   background-position: -126px -182px;
 }
 .you_may_like .like-top .change-btn .change-btn-next:hover {
@@ -1273,6 +1281,9 @@ i {
 .stairs {
   overflow: hidden;
   width: 100%;
+  /*包裹自定义分页器的div的位置等CSS样式*/
+  /*自定义分页器的样式，这个你自己想要什么样子自己写*/
+  /*自定义分页器激活时的样式表现*/
 }
 .stairs .mt {
   height: 38px;
@@ -1391,6 +1402,23 @@ i {
 .stairs .mc .mc_l .KeyAll .keywords ul:nth-child(3) {
   width: 73px;
   margin: 8px 15px 15px 10px;
+}
+.stairs .swiper-pagination-custom {
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+}
+.stairs .swiper-pagination-customs {
+  width: 30px;
+  height: 4px;
+  display: inline-block;
+  background: #000;
+  opacity: .3;
+  margin: 0 5px;
+}
+.stairs .swiper-pagination-customs-active {
+  opacity: 1;
+  background-color: #F78E00;
 }
 .stairs .nav {
   position: absolute;
@@ -1804,26 +1832,111 @@ i {
   width: 35px;
   height: 100%;
   position: fixed;
-  background: #5c5c5c;
+  background: #4e4e4e;
   top: 0;
   right: 0;
 }
-
-.sidebar li {
-  font-size: 12px;
-  text-align: center;
+.sidebar li:hover {
+  background: #343434;
 }
-
-.sidebar li a {
-  display: block;
-  height: 38px;
-}
-
 .sidebar .side-top {
   position: absolute;
   display: block;
   top: 71px;
   text-align: center;
+}
+.sidebar .side-top li {
+  font-size: 12px;
+  text-align: center;
+}
+.sidebar .side-top li a {
+  height: 38px;
+  display: block;
+}
+.sidebar .side-top .icon-user i {
+  margin-left: 6px;
+  margin-top: 10px;
+  display: block;
+  background-position: -18px -1025px;
+  width: 28px;
+  height: 18px;
+  position: absolute;
+  text-align: center;
+}
+.sidebar .side-top .icon-user:hover {
+  background: #343434;
+}
+.sidebar .side-top li:nth-child(2) {
+  height: 100px;
+  padding: 10px 0;
+}
+.sidebar .side-top li:nth-child(2) a {
+  color: #fff;
+  height: 100px;
+}
+.sidebar .side-top li:nth-child(2) i {
+  margin-left: 5px;
+  margin-top: 15px;
+  display: block;
+  background-position: 0px -1046px;
+  width: 31px;
+  height: 20px;
+  position: absolute;
+  text-align: center;
+}
+.sidebar .side-top li:nth-child(2) span {
+  line-height: 18px;
+  margin-top: 30px;
+}
+.sidebar .side-top li:nth-child(3) i, .sidebar .side-top li:nth-child(4) i {
+  margin-left: 6px;
+  margin-top: 10px;
+  display: block;
+  background-position: 2px -1120px;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  text-align: center;
+}
+.sidebar .side-top li:nth-child(4) i {
+  background-position: -68px -1023px;
+}
+.sidebar .side-bottom {
+  position: absolute;
+  display: block;
+  text-align: center;
+  height: auto;
+  width: 35px;
+  bottom: 35px;
+}
+.sidebar .side-bottom li {
+  height: 36px;
+}
+.sidebar .side-bottom li a {
+  display: block;
+  height: 36px;
+}
+.sidebar .side-bottom li i {
+  margin-left: 6px;
+  margin-top: 10px;
+  display: block;
+  background-position: 2px -1120px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  text-align: center;
+}
+.sidebar .side-bottom li:nth-child(1) i {
+  background-position: -212px -473px;
+}
+.sidebar .side-bottom li:nth-child(2) i {
+  background-position: -212px -493px;
+}
+.sidebar .side-bottom li:nth-child(3) i {
+  background-position: -212px -513px;
+}
+.sidebar .side-bottom li:nth-child(4) i {
+  background-position: -212px -533px;
 }
 
 .side-top li span {
@@ -1831,22 +1944,6 @@ i {
   display: block;
   margin: 12px;
   width: 12px;
-}
-
-.icon-user i {
-  width: 28px;
-  height: 18px;
-  position: absolute;
-  text-align: center;
-}
-
-.side-top .icon-user {
-  background-position: -18px -1024px;
-}
-
-.side-bottom {
-  position: absolute;
-  bottom: 10px;
 }
 
 /*# sourceMappingURL=index.css.map */
